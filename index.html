@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>HRMS — Unified Management System</title>
+<title>HRMS &mdash; Unified Management System</title>
 <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
 :root {
@@ -288,16 +288,16 @@ input[type=file]{display:none;}
     <nav class="sidebar">
       <div class="sidebar-logo"><span>H</span>RMS</div>
       <div class="sidebar-user">
-        <div class="name" id="sidebarName">—</div>
-        <div class="role-badge" id="sidebarRoleBadge">—</div>
+        <div class="name" id="sidebarName">&mdash;</div>
+        <div class="role-badge" id="sidebarRoleBadge">&mdash;</div>
       </div>
 
       <div class="nav-section">Main</div>
       <div class="nav-item active" data-page="dashboard" onclick="navigate('dashboard')">
-        <span class="icon">◈</span> Dashboard
+        <span class="icon">&#9672;</span> Dashboard
       </div>
       <div class="nav-item" data-page="profile" onclick="navigate('profile')">
-        <span class="icon">◉</span> My Profile
+        <span class="icon">&#9673;</span> My Profile
       </div>
 
       <div class="nav-section">Workforce</div>
@@ -305,29 +305,29 @@ input[type=file]{display:none;}
         <span class="icon">◷</span> Attendance
       </div>
       <div class="nav-item" data-page="leaves" onclick="navigate('leaves')">
-        <span class="icon">◌</span> Leave
+        <span class="icon">&#9676;</span> Leave
       </div>
       <div class="nav-item hide-employee" data-page="employees" onclick="navigate('employees')">
-        <span class="icon">◎</span> Employees
+        <span class="icon">&#9678;</span> Employees
       </div>
 
       <div class="nav-section">Assets</div>
       <div class="nav-item" data-page="assets" onclick="navigate('assets')">
-        <span class="icon">▣</span> Assets
+        <span class="icon">&#9635;</span> Assets
       </div>
 
       <div class="nav-section hide-employee">Admin</div>
       <div class="nav-item hide-employee" data-page="documents" onclick="navigate('documents')">
-        <span class="icon">◫</span> Documents
+        <span class="icon">&#9707;</span> Documents
       </div>
       <div class="nav-item hide-employee hide-superuser" data-page="users" onclick="navigate('users')">
-        <span class="icon">◑</span> Users
+        <span class="icon">&#9681;</span> Users
       </div>
       <div class="nav-item manager-only" data-page="finance" onclick="navigate('finance')">
-        <span class="icon">◈</span> Finance ✦
+        <span class="icon">&#9672;</span> Finance ✦
       </div>
       <div class="nav-item hide-employee" data-page="logs" onclick="navigate('logs')">
-        <span class="icon">◧</span> Audit Logs
+        <span class="icon">&#9703;</span> Audit Logs
       </div>
 
       <div class="sidebar-footer">
@@ -560,7 +560,7 @@ input[type=file]{display:none;}
         </div>
 
         <div id="ast-recovery" style="display:none;">
-          <div class="alert alert-warn mb-4">⚠️ Assets listed below belong to employees with status <strong>Exited</strong> or <strong>Inactive</strong> and have not been returned.</div>
+          <div class="alert alert-warn mb-4">&#9888;️ Assets listed below belong to employees with status <strong>Exited</strong> or <strong>Inactive</strong> and have not been returned.</div>
           <div class="table-wrap"><table>
             <thead><tr><th>Asset</th><th>Serial</th><th>Assigned To</th><th>Department</th><th>Flag</th></tr></thead>
             <tbody id="recoveryBody"></tbody>
@@ -607,7 +607,7 @@ input[type=file]{display:none;}
       <div id="page-finance" class="page">
         <div class="page-header">
           <div class="page-title">Financial Dashboard ✦</div>
-          <div class="page-subtitle">Manager-only — Salary & Spend Analytics</div>
+          <div class="page-subtitle">Manager-only &mdash; Salary & Spend Analytics</div>
         </div>
         <div class="tabs">
           <div class="tab active" onclick="switchTab(this,'fin-overview')">Overview</div>
@@ -641,12 +641,12 @@ input[type=file]{display:none;}
           <div class="grid-2 mb-4">
             <div class="stat-card">
               <div class="stat-label">Active Staff Burn</div>
-              <div class="stat-value text-green" id="activeSpend">—</div>
+              <div class="stat-value text-green" id="activeSpend">&mdash;</div>
               <div class="stat-change">Monthly outflow for active employees</div>
             </div>
             <div class="stat-card">
               <div class="stat-label">Exited Staff Total Spend</div>
-              <div class="stat-value text-gold" id="exitedSpend">—</div>
+              <div class="stat-value text-gold" id="exitedSpend">&mdash;</div>
               <div class="stat-change">Historical total paid to exited employees</div>
             </div>
           </div>
@@ -770,7 +770,7 @@ input[type=file]{display:none;}
       <div class="form-field full"><label>Reason</label><textarea id="lv_reason" rows="3"></textarea></div>
     </div>
     <div id="sandwichAlert" style="display:none;" class="alert alert-warn mt-3">
-      ⚠️ Sandwich Rule: Your leave spans a weekend. A 4-day deduction may apply.
+      &#9888;️ Sandwich Rule: Your leave spans a weekend. A 4-day deduction may apply.
     </div>
     <div class="form-actions">
       <button class="btn btn-ghost" onclick="closeModal('leaveModal')">Cancel</button>
@@ -883,7 +883,7 @@ input[type=file]{display:none;}
     <input type="hidden" id="eu_username">
     <div class="form-field mb-3"><label>Change Role</label>
       <select id="eu_role">
-        <option value="">— Keep current —</option>
+        <option value="">&mdash; Keep current &mdash;</option>
         <option value="Employee">Employee</option>
         <option value="SuperUser">SuperUser</option>
         <option value="Admin">Admin</option>
@@ -1002,115 +1002,130 @@ input[type=file]{display:none;}
 <div id="toast"></div>
 
 <script>
-// ═══════════════════════════════════════════════════════════════
-//  CONFIG — paste your deployed Apps Script URL here
-// ═══════════════════════════════════════════════════════════════
-const API = "https://script.google.com/macros/s/AKfycbwziv_wNOREU3IVf6xMdpIqZAShDXSZ8YGopFhkQZkFyDRWcgD3gbqXqGFpaC82Wb6Bmg/exec";
 
-// ═══════════════════════════════════════════════════════════════
-//  STATE
-// ═══════════════════════════════════════════════════════════════
-let currentUser  = null;  // { username, fullName, role, employeeId, email }
-let allAssets    = [];
-let allHistory   = [];
-let allEmployees = [];
-let allUsers     = [];
-let allLeaves    = [];
-let allSalary    = [];
-let allLogs      = [];
-let allDocs      = [];
-let webcamStream = null;
-let selectedDocFile = null;
-let currentEmployeeData = null;
+// CONFIG - replace YOUR_SCRIPT_ID_HERE with your Apps Script deployment URL
+var API = "https://script.google.com/macros/s/YOUR_SCRIPT_ID_HERE/exec";
 
-// ═══════════════════════════════════════════════════════════════
-//  UTILS
-// ═══════════════════════════════════════════════════════════════
+// STATE
+var currentUser  = null;
+var allAssets    = [];
+var allHistory   = [];
+var allEmployees = [];
+var allUsers     = [];
+var allLeaves    = [];
+var allSalary    = [];
+var allLogs      = [];
+var allDocs      = [];
+var webcamStream = null;
+var selectedDocFile = null;
+
+// UTILS
 function api(params) {
-  const url = API + "?" + new URLSearchParams(params).toString();
-  return fetch(url).then(r => r.json());
+  var url = API + "?" + new URLSearchParams(params).toString();
+  return fetch(url).then(function(r) { return r.json(); });
 }
 
-function toast(msg, type="info") {
-  const el = document.createElement("div");
+function toast(msg, type) {
+  type = type || "info";
+  var el = document.createElement("div");
   el.className = "toast-item " + type;
   el.textContent = msg;
   document.getElementById("toast").appendChild(el);
-  setTimeout(() => el.remove(), 3500);
+  setTimeout(function() { el.remove(); }, 3500);
 }
 
 function openModal(id)  { document.getElementById(id).classList.add("open"); }
 function closeModal(id) { document.getElementById(id).classList.remove("open"); }
 
 function fmt(val) {
-  if (!val) return "—";
+  if (!val) return "-";
   if (val instanceof Date) return val.toLocaleDateString("en-IN");
-  if (typeof val === "string" && val.match(/^\d{4}-\d{2}-\d{2}T/)) {
+  var s = String(val);
+  if (s.match(/^\d{4}-\d{2}-\d{2}T/)) {
     return new Date(val).toLocaleString("en-IN", {day:"2-digit",month:"short",year:"numeric",hour:"2-digit",minute:"2-digit"});
   }
-  if (typeof val === "string" && val.match(/^\d{4}-\d{2}-\d{2}$/)) {
-    const [y,m,d] = val.split("-");
-    return `${d}/${m}/${y}`;
+  if (s.match(/^\d{4}-\d{2}-\d{2}$/)) {
+    var parts = s.split("-");
+    return parts[2] + "/" + parts[1] + "/" + parts[0];
   }
   return val;
 }
 
 function fmtCurrency(n) {
-  if (!n) return "₹0";
-  return "₹" + Number(n).toLocaleString("en-IN");
+  if (!n) return "Rs.0";
+  return "Rs." + Number(n).toLocaleString("en-IN");
 }
 
 function badgeForStatus(s) {
-  if (!s) return '<span class="badge badge-gray">—</span>';
-  const map = { Active:"green", Approved:"green", YES:"green", Yes:"green",
-                Pending:"yellow", Inactive:"yellow",
-                Rejected:"red", Exited:"red", NO:"red",
-                "Sandwich Rule May Apply":"yellow" };
-  const cls = map[s] || "gray";
-  return `<span class="badge badge-${cls}">${s}</span>`;
+  if (!s) return '<span class="badge badge-gray">-</span>';
+  var map = { Active:"green", Approved:"green", YES:"green", Yes:"green",
+              Pending:"yellow", Inactive:"yellow",
+              Rejected:"red", Exited:"red", NO:"red" };
+  var cls = map[s] || "gray";
+  return '<span class="badge badge-' + cls + '">' + s + '</span>';
 }
 
 function switchTab(el, id) {
-  const parent = el.parentElement;
-  parent.querySelectorAll(".tab").forEach(t => t.classList.remove("active"));
+  var parent = el.parentElement;
+  parent.querySelectorAll(".tab").forEach(function(t) { t.classList.remove("active"); });
   el.classList.add("active");
-  const container = parent.nextElementSibling;
-  if (!container) return;
-  let p = container;
+  var p = parent.nextElementSibling;
   while (p) {
-    if (p.id && !p.classList.contains("tabs")) { p.style.display = "none"; }
+    if (p.id) p.style.display = "none";
     p = p.nextElementSibling;
   }
-  const target = document.getElementById(id);
+  var target = document.getElementById(id);
   if (target) target.style.display = "";
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  AUTH
-// ═══════════════════════════════════════════════════════════════
+function esc(s) {
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");
+}
+
+// AUTH
 function doLogin() {
-  const u = document.getElementById("loginUser").value.trim();
-  const p = document.getElementById("loginPass").value.trim();
+  var u = document.getElementById("loginUser").value.trim();
+  var p = document.getElementById("loginPass").value.trim();
   if (!u || !p) { showLoginError("Please enter username and password"); return; }
-  api({ action:"login", username:u, password:p }).then(r => {
-    if (r.success) {
-      currentUser = { username:u, fullName:r.fullName, role:r.role, employeeId:r.employeeId, email:r.email };
-      document.getElementById("loginScreen").style.display = "none";
-      document.getElementById("app").style.display = "block";
-      initApp();
-    } else {
-      showLoginError(r.error || "Login failed");
-    }
-  }).catch(() => showLoginError("Connection error — check API URL"));
+
+  if (API.indexOf("YOUR_SCRIPT_ID_HERE") >= 0) {
+    showLoginError("SETUP NEEDED: Open index.html in Notepad and replace YOUR_SCRIPT_ID_HERE with your Google Apps Script URL.");
+    return;
+  }
+
+  showLoginError("Connecting... please wait");
+
+  fetch(API + "?" + new URLSearchParams({ action:"login", username:u, password:p }).toString())
+    .then(function(r) {
+      if (!r.ok) throw new Error("HTTP " + r.status);
+      return r.json();
+    })
+    .then(function(r) {
+      if (r.success) {
+        currentUser = { username:u, fullName:r.fullName, role:r.role, employeeId:r.employeeId||"", email:r.email||"" };
+        document.getElementById("loginScreen").style.display = "none";
+        document.getElementById("app").style.display = "block";
+        document.getElementById("loginError").style.display = "none";
+        initApp();
+      } else {
+        showLoginError("Login failed: " + (r.error||"Unknown") + " - Check: (1) Username and password match Users sheet exactly (2) Column D = Manager/Admin/Employee/SuperUser (3) Column E = YES in capitals");
+      }
+    })
+    .catch(function(err) {
+      showLoginError("Cannot connect. Check: (1) Replace YOUR_SCRIPT_ID_HERE in index.html with real URL (2) Apps Script: Deploy > Web App > Execute as Me > Who has access = Anyone (3) Authorize when deploying. Error: " + err.message);
+    });
 }
 
 function showLoginError(msg) {
-  const el = document.getElementById("loginError");
-  el.textContent = msg; el.style.display = "flex";
+  var el = document.getElementById("loginError");
+  el.textContent = msg;
+  el.style.display = "flex";
 }
 
-document.getElementById("loginPass").addEventListener("keydown", e => { if(e.key==="Enter") doLogin(); });
-document.getElementById("loginUser").addEventListener("keydown", e => { if(e.key==="Enter") doLogin(); });
+document.addEventListener("DOMContentLoaded", function() {
+  document.getElementById("loginPass").addEventListener("keydown", function(e) { if(e.key==="Enter") doLogin(); });
+  document.getElementById("loginUser").addEventListener("keydown", function(e) { if(e.key==="Enter") doLogin(); });
+});
 
 function doLogout() {
   currentUser = null;
@@ -1118,48 +1133,51 @@ function doLogout() {
   document.getElementById("loginScreen").style.display = "flex";
   document.getElementById("loginUser").value = "";
   document.getElementById("loginPass").value = "";
-  if (webcamStream) { webcamStream.getTracks().forEach(t=>t.stop()); webcamStream=null; }
+  if (webcamStream) { webcamStream.getTracks().forEach(function(t){t.stop();}); webcamStream=null; }
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  APP INIT
-// ═══════════════════════════════════════════════════════════════
+// APP INIT
 function initApp() {
   document.getElementById("sidebarName").textContent = currentUser.fullName;
-  const roleLabels = { Employee:"Employee", SuperUser:"Super User", Admin:"Admin", Manager:"Manager ✦" };
-  const roleCls    = { Employee:"role-employee", SuperUser:"role-superuser", Admin:"role-admin", Manager:"role-manager" };
-  const rb = document.getElementById("sidebarRoleBadge");
+  var roleLabels = { Employee:"Employee", SuperUser:"Super User", Admin:"Admin", Manager:"Manager" };
+  var roleCls    = { Employee:"role-employee", SuperUser:"role-superuser", Admin:"role-admin", Manager:"role-manager" };
+  var rb = document.getElementById("sidebarRoleBadge");
   rb.textContent = roleLabels[currentUser.role] || currentUser.role;
   rb.className = "role-badge " + (roleCls[currentUser.role] || "role-employee");
-
   applyRBAC();
   startClock();
   loadDashboard();
 }
 
 function applyRBAC() {
-  const role = currentUser.role;
-  document.querySelectorAll(".hide-employee").forEach(el =>
-    el.style.display = role === "Employee" ? "none" : "");
-  document.querySelectorAll(".hide-superuser").forEach(el =>
-    el.style.display = (role === "Employee" || role === "SuperUser") ? "none" : "");
-  document.querySelectorAll(".admin-only").forEach(el =>
-    el.style.display = (role === "Admin" || role === "Manager") ? "" : "none");
-  document.querySelectorAll(".manager-only").forEach(el =>
-    el.style.display = role === "Manager" ? "" : "none");
+  var role = currentUser.role;
+  document.querySelectorAll(".hide-employee").forEach(function(el) {
+    el.style.display = role === "Employee" ? "none" : "";
+  });
+  document.querySelectorAll(".hide-superuser").forEach(function(el) {
+    el.style.display = (role === "Employee" || role === "SuperUser") ? "none" : "";
+  });
+  document.querySelectorAll(".admin-only").forEach(function(el) {
+    el.style.display = (role === "Admin" || role === "Manager") ? "" : "none";
+  });
+  document.querySelectorAll(".manager-only").forEach(function(el) {
+    el.style.display = role === "Manager" ? "" : "none";
+  });
 }
 
 function navigate(page) {
-  document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-  document.querySelectorAll(".nav-item").forEach(n => n.classList.remove("active"));
-  document.getElementById("page-" + page).classList.add("active");
-  document.querySelector(`[data-page="${page}"]`)?.classList.add("active");
-  document.querySelector(".sidebar")?.classList.remove("open");
-
-  const loaders = {
+  document.querySelectorAll(".page").forEach(function(p) { p.classList.remove("active"); });
+  document.querySelectorAll(".nav-item").forEach(function(n) { n.classList.remove("active"); });
+  var pageEl = document.getElementById("page-" + page);
+  if (pageEl) pageEl.classList.add("active");
+  var navEl = document.querySelector('[data-page="' + page + '"]');
+  if (navEl) navEl.classList.add("active");
+  var sidebar = document.querySelector(".sidebar");
+  if (sidebar) sidebar.classList.remove("open");
+  var loaders = {
     dashboard: loadDashboard,
     employees: loadEmployees,
-    attendance: () => {},
+    attendance: function() { checkTodayPunch(); },
     leaves:    loadLeaves,
     assets:    loadAssets,
     documents: loadDocumentPage,
@@ -1171,174 +1189,175 @@ function navigate(page) {
   if (loaders[page]) loaders[page]();
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  CLOCK
-// ═══════════════════════════════════════════════════════════════
+// CLOCK
 function startClock() {
   function tick() {
-    const now = new Date();
-    const clockEl = document.getElementById("liveClock");
-    const dateEl  = document.getElementById("liveDate");
+    var now = new Date();
+    var clockEl = document.getElementById("liveClock");
+    var dateEl  = document.getElementById("liveDate");
     if (clockEl) clockEl.textContent = now.toLocaleTimeString("en-IN", {hour:"2-digit",minute:"2-digit",second:"2-digit"});
-    if (dateEl) dateEl.textContent = now.toLocaleDateString("en-IN", {weekday:"long",day:"numeric",month:"long",year:"numeric"});
+    if (dateEl)  dateEl.textContent  = now.toLocaleDateString("en-IN", {weekday:"long",day:"numeric",month:"long",year:"numeric"});
   }
   tick(); setInterval(tick, 1000);
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  DASHBOARD
-// ═══════════════════════════════════════════════════════════════
-async function loadDashboard() {
-  const hour = new Date().getHours();
-  const greet = hour<12?"Good morning":"hour<17?Good afternoon":"Good evening";
-  document.getElementById("dashGreeting").textContent = `${hour<12?"Good morning":hour<17?"Good afternoon":"Good evening"}, ${currentUser.fullName} 👋`;
+// DASHBOARD
+function loadDashboard() {
+  var hour = new Date().getHours();
+  var greetWord = hour < 12 ? "Good morning" : hour < 17 ? "Good afternoon" : "Good evening";
+  document.getElementById("dashGreeting").textContent = greetWord + ", " + currentUser.fullName;
 
-  // Parallel loads
-  const [assetsR, leavesR] = await Promise.all([
+  var empId = currentUser.employeeId || currentUser.username;
+
+  Promise.all([
     api({action:"getAllAssets"}),
-    api({action:"getLeaves", employeeId: currentUser.employeeId||currentUser.username})
-  ]);
+    api({action:"getLeaves", employeeId: empId})
+  ]).then(function(results) {
+    allAssets = results[0].assets || [];
+    var myLeaves = (results[1].leaves || []).filter(function(l) {
+      return l["Employee ID"] === empId;
+    });
+    var myAssets = allAssets.filter(function(a) {
+      var holder = String(a["Current Holder"]||"").toLowerCase();
+      return holder.indexOf(currentUser.fullName.toLowerCase()) >= 0 ||
+             holder.indexOf((currentUser.employeeId||"").toLowerCase()) >= 0;
+    });
 
-  allAssets = assetsR.assets || [];
-  const myLeaves = (leavesR.leaves || []).filter(l =>
-    l["Employee ID"] === (currentUser.employeeId||currentUser.username));
+    var stats = [
+      {label:"Total Assets",   value: allAssets.length,  color:"var(--accent)"},
+      {label:"My Assets",      value: myAssets.length,   color:"var(--accent2)"},
+      {label:"Leaves Applied", value: myLeaves.length,   color:"var(--gold)"},
+      {label:"Pending Leaves", value: myLeaves.filter(function(l){return l.Status==="Pending";}).length, color:"var(--warn)"}
+    ];
 
-  const myAssets = allAssets.filter(a =>
-    String(a["Current Holder"]||"").toLowerCase().includes(currentUser.fullName.toLowerCase()) ||
-    String(a["Current Holder"]||"").toLowerCase().includes((currentUser.employeeId||"").toLowerCase()));
+    document.getElementById("dashStats").innerHTML = stats.map(function(s) {
+      return '<div class="stat-card"><div class="stat-label">' + s.label + '</div>' +
+             '<div class="stat-value" style="color:' + s.color + '">' + s.value + '</div></div>';
+    }).join("");
 
-  // Stats
-  const stats = [
-    {label:"Total Assets",  value: allAssets.length, color:"var(--accent)"},
-    {label:"My Assets",     value: myAssets.length,  color:"var(--accent2)"},
-    {label:"Leave Applied", value: myLeaves.length,  color:"var(--gold)"},
-    {label:"Pending Leaves",value: myLeaves.filter(l=>l.Status==="Pending").length, color:"var(--warn)"}
-  ];
-  document.getElementById("dashStats").innerHTML = stats.map(s =>
-    `<div class="stat-card"><div class="stat-label">${s.label}</div>
-     <div class="stat-value" style="color:${s.color}">${s.value}</div></div>`
-  ).join("");
+    var leavesHtml = myLeaves.slice(-5).reverse().map(function(l) {
+      return '<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);">' +
+             '<div><div style="font-size:13px;">' + esc(l["Leave Type"]||"-") + '</div>' +
+             '<div class="text-muted" style="font-size:11px;">' + fmt(l["From Date"]) + ' to ' + fmt(l["To Date"]) + '</div></div>' +
+             badgeForStatus(l.Status) + '</div>';
+    }).join("") || '<div class="empty-state"><div>No leaves applied</div></div>';
+    document.getElementById("dashLeaves").innerHTML = leavesHtml;
 
-  // Recent leaves
-  const leavesHtml = myLeaves.slice(-5).reverse().map(l =>
-    `<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);">
-      <div><div style="font-size:13px;">${l["Leave Type"]||"—"}</div>
-        <div class="text-muted" style="font-size:11px;">${fmt(l["From Date"])} – ${fmt(l["To Date"])}</div></div>
-      ${badgeForStatus(l.Status)}
-    </div>`).join("") || '<div class="empty-state"><div>No leaves applied</div></div>';
-  document.getElementById("dashLeaves").innerHTML = leavesHtml;
+    var assetsHtml = myAssets.slice(0,5).map(function(a) {
+      return '<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);">' +
+             '<div><div style="font-size:13px;">' + esc(a["Asset Name"]||"-") + '</div>' +
+             '<div class="text-muted" style="font-size:11px;">' + esc(a["Asset ID"]||"") + ' - ' + esc(a.Category||"") + '</div></div>' +
+             badgeForStatus(a.Condition||"Good") + '</div>';
+    }).join("") || '<div class="empty-state"><div>No assets assigned</div></div>';
+    document.getElementById("dashAssets").innerHTML = assetsHtml;
 
-  // My assets
-  const assetsHtml = myAssets.slice(0,5).map(a =>
-    `<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);">
-      <div><div style="font-size:13px;">${a["Asset Name"]||"—"}</div>
-        <div class="text-muted" style="font-size:11px;">${a["Asset ID"]||""} · ${a.Category||""}</div></div>
-      ${badgeForStatus(a.Condition||"Good")}
-    </div>`).join("") || '<div class="empty-state"><div>No assets assigned</div></div>';
-  document.getElementById("dashAssets").innerHTML = assetsHtml;
-
-  // Today's attendance
-  const today = new Date().toISOString().split("T")[0];
-  const attR = await api({action:"getAttendance", employeeId: currentUser.employeeId||currentUser.username, date:today});
-  const todayPunches = attR.attendance || [];
-  const attHtml = todayPunches.length
-    ? todayPunches.map(p=>`<span class="badge ${p["Punch Type"]==="IN"||p["Punch Type"]==="Punch In"?"badge-green":"badge-yellow"}">${p["Punch Type"]} ${fmt(p.Timestamp)}</span>`).join(" ")
-    : '<span class="text-muted" style="font-size:13px;">No punches today</span>';
-  document.getElementById("dashAttendance").innerHTML = attHtml;
+    var today = new Date().toISOString().split("T")[0];
+    return api({action:"getAttendance", employeeId: empId, date:today});
+  }).then(function(attR) {
+    var todayPunches = attR.attendance || [];
+    var attHtml = todayPunches.length
+      ? todayPunches.map(function(p) {
+          var cls = (p["Punch Type"]==="IN"||p["Punch Type"]==="Punch In") ? "badge-green" : "badge-yellow";
+          return '<span class="badge ' + cls + '">' + esc(p["Punch Type"]) + ' ' + fmt(p.Timestamp) + '</span> ';
+        }).join("")
+      : '<span class="text-muted" style="font-size:13px;">No punches recorded today</span>';
+    document.getElementById("dashAttendance").innerHTML = attHtml;
+  }).catch(function(err) {
+    document.getElementById("dashStats").innerHTML = '<div class="alert alert-error" style="grid-column:1/-1;">Failed to load dashboard: ' + err.message + '</div>';
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  PROFILE
-// ═══════════════════════════════════════════════════════════════
-async function loadMyProfile() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const r = await api({action:"getEmployee", employeeId: empId});
-  currentEmployeeData = r.employee;
-  const e = r.employee;
-  if (!e) {
-    document.getElementById("profileContent").innerHTML =
-      `<div class="alert alert-info">No profile found for your account. Ask your admin to create an employee profile for you.<br><br>
-      ${currentUser.role==="Employee"?"":"<button class='btn btn-primary btn-sm' onclick='openAddEmployeeModal()'>Create My Profile</button>"}</div>`;
-    return;
-  }
+// PROFILE
+function loadMyProfile() {
+  var empId = currentUser.employeeId || currentUser.username;
+  api({action:"getEmployee", employeeId: empId}).then(function(r) {
+    var e = r.employee;
+    if (!e) {
+      var addBtn = (currentUser.role !== "Employee")
+        ? '<button class="btn btn-primary btn-sm" onclick="openAddEmployeeModal()">Create Profile</button>'
+        : "";
+      document.getElementById("profileContent").innerHTML =
+        '<div class="alert alert-info">No profile found for your account. Ask your admin to create an employee profile linked to username: ' + esc(currentUser.username) + '. ' + addBtn + '</div>';
+      return;
+    }
+    return api({action:"getChangeRequests", employeeId: empId}).then(function(crR) {
+      var pendingCR = (crR.requests||[]).filter(function(req){return req.Status==="Pending";});
+      var photoSrc = e["Photo URL"] || "https://ui-avatars.com/api/?name=" + encodeURIComponent(e["Full Name"]||"?") + "&background=6c63ff&color=fff&size=80";
+      var isReadOnly = currentUser.role === "Employee";
 
-  const crR = await api({action:"getChangeRequests", employeeId: empId});
-  const pendingCR = (crR.requests||[]).filter(r=>r.Status==="Pending");
+      var html = '<div class="profile-header">';
+      html += '<img src="' + esc(photoSrc) + '" class="profile-avatar" onerror="this.src=\'https://ui-avatars.com/api/?name=?&background=6c63ff&color=fff&size=80\'">';
+      html += '<div class="profile-info">';
+      html += '<h2>' + esc(e["Full Name"]||"-") + '</h2>';
+      html += '<p>' + esc(e.Designation||"-") + ' - ' + esc(e.Department||"-") + '</p>';
+      html += '<div class="profile-meta">' + badgeForStatus(e.Status||"Active") + ' <span class="tag">' + esc(e["Employment Type"]||"Full-Time") + '</span></div>';
+      html += '</div>';
+      if (!isReadOnly) {
+        html += '<button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal(\'' + esc(empId) + '\')">Edit Profile</button>';
+      }
+      html += '</div>';
 
-  const photoSrc = e["Photo URL"] || "https://ui-avatars.com/api/?name=" + encodeURIComponent(e["Full Name"]||"?") + "&background=6c63ff&color=fff&size=80";
+      if (isReadOnly) {
+        html += '<div class="alert alert-info mt-3" style="font-size:12px;">Your profile is read-only. Use the Request Change button to update editable fields. Admin will approve changes.</div>';
+      }
+      if (pendingCR.length) {
+        html += '<div class="alert alert-warn mb-4">You have ' + pendingCR.length + ' pending change request(s) awaiting admin approval.</div>';
+      }
 
-  const isReadOnly = currentUser.role === "Employee";
-  const readOnlyNote = isReadOnly ? `<div class="alert alert-info mt-3" style="font-size:12px;">Your profile is read-only. Use "Request Change" to update editable fields.</div>` : "";
+      html += '<div class="grid-2">';
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Personal Information</div>';
+      html += profileRow("Date of Birth", fmt(e["Date of Birth"]), null, false, null);
+      html += profileRow("Phone", e.Phone, "Phone", isReadOnly, e.Phone);
+      html += profileRow("Email", e.Email, "Email", isReadOnly, e.Email);
+      html += profileRow("Address", e.Address, "Address", isReadOnly, e.Address);
+      html += profileRow("Emergency Contact", e["Emergency Contact"], "Emergency Contact", isReadOnly, e["Emergency Contact"]);
+      html += profileRow("PAN", e.PAN, null, false, null);
+      html += profileRow("Aadhaar", e.Aadhaar, null, false, null);
+      html += '</div>';
 
-  document.getElementById("profileContent").innerHTML = `
-    <div class="profile-header">
-      <img src="${photoSrc}" class="profile-avatar" onerror="this.src='https://ui-avatars.com/api/?name=?&background=6c63ff&color=fff&size=80'">
-      <div class="profile-info">
-        <h2>${e["Full Name"]||"—"}</h2>
-        <p>${e.Designation||"—"} · ${e.Department||"—"}</p>
-        <div class="profile-meta">
-          ${badgeForStatus(e.Status||"Active")}
-          <span class="tag">${e["Employment Type"]||"Full-Time"}</span>
-          <span class="tag">Joined ${fmt(e["Date of Joining"])}</span>
-        </div>
-      </div>
-      ${!isReadOnly?`<button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal('${empId}')">✏ Edit</button>`:""}
-    </div>
-    ${readOnlyNote}
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Professional Details</div>';
+      html += profileRow("Employee ID", e["Employee ID"], null, false, null);
+      html += profileRow("Reporting Manager", e["Reporting Manager"], null, false, null);
+      html += profileRow("Department", e.Department, null, false, null);
+      html += profileRow("Designation", e.Designation, null, false, null);
+      html += profileRow("Education", e.Education, null, false, null);
+      html += profileRow("Experience", e.Experience, null, false, null);
+      html += '</div>';
 
-    ${pendingCR.length?`<div class="alert alert-warn mb-4">📝 You have ${pendingCR.length} pending change request(s) awaiting admin approval.</div>`:""}
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Bank and Payroll</div>';
+      html += profileRow("Bank Account", e["Bank Account"], "Bank Account", isReadOnly, e["Bank Account"]);
+      html += profileRow("IFSC Code", e.IFSC, "IFSC", isReadOnly, e.IFSC);
+      html += profileRow("PF Number", e["PF Number"], null, false, null);
+      html += '</div>';
 
-    <div class="grid-2">
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Personal Information</div>
-        ${profileRow("Date of Birth", fmt(e["Date of Birth"]))}
-        ${profileRow("Phone", e.Phone, "Phone", isReadOnly, e.Phone)}
-        ${profileRow("Email", e.Email, "Email", isReadOnly, e.Email)}
-        ${profileRow("Address", e.Address, "Address", isReadOnly, e.Address)}
-        ${profileRow("Emergency Contact", e["Emergency Contact"], "Emergency Contact", isReadOnly, e["Emergency Contact"])}
-        ${profileRow("PAN", e.PAN)}
-        ${profileRow("Aadhaar", e.Aadhaar)}
-      </div>
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Professional Details</div>
-        ${profileRow("Employee ID", e["Employee ID"])}
-        ${profileRow("Reporting Manager", e["Reporting Manager"])}
-        ${profileRow("Department", e.Department)}
-        ${profileRow("Designation", e.Designation)}
-        ${profileRow("Education", e.Education)}
-        ${profileRow("Experience", e.Experience)}
-      </div>
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Bank & Payroll</div>
-        ${profileRow("Bank Account", e["Bank Account"], "Bank Account", isReadOnly, e["Bank Account"])}
-        ${profileRow("IFSC Code", e.IFSC, "IFSC", isReadOnly, e.IFSC)}
-        ${profileRow("PF Number", e["PF Number"])}
-      </div>
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Change Request History</div>
-        ${(crR.requests||[]).length===0?"<p class='text-muted' style='font-size:13px;'>No change requests</p>":
-          (crR.requests||[]).slice(-5).reverse().map(r=>
-            `<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;">
-              <strong>${r.Field}</strong>: ${r["Old Value"]||"—"} → ${r["New Value"]||"—"}
-              ${badgeForStatus(r.Status)}
-            </div>`).join("")
-        }
-      </div>
-    </div>`;
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Change Request History</div>';
+      var allCR = crR.requests || [];
+      if (allCR.length === 0) {
+        html += '<p class="text-muted" style="font-size:13px;">No change requests submitted</p>';
+      } else {
+        allCR.slice(-5).reverse().forEach(function(req) {
+          html += '<div style="padding:8px 0;border-bottom:1px solid var(--border);font-size:12px;">';
+          html += '<strong>' + esc(req.Field) + '</strong>: ' + esc(req["Old Value"]||"-") + ' to ' + esc(req["New Value"]||"-") + ' ';
+          html += badgeForStatus(req.Status) + '</div>';
+        });
+      }
+      html += '</div></div>';
+
+      document.getElementById("profileContent").innerHTML = html;
+    });
+  });
 }
 
 function profileRow(label, val, editField, showRequest, currentVal) {
-  const display = val || "—";
-  const reqBtn = showRequest
-    ? `<button class="btn btn-ghost btn-sm" style="padding:3px 8px;font-size:11px;"
-         onclick="openChangeRequestModal('${editField}','${currentVal||""}')">Request Change</button>`
-    : "";
-  return `<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,47,62,.5);">
-    <span style="font-size:12px;color:var(--muted);">${label}</span>
-    <div style="display:flex;align-items:center;gap:8px;">
-      <span style="font-size:13px;">${display}</span>${reqBtn}
-    </div>
-  </div>`;
+  var display = val || "-";
+  var reqBtn = "";
+  if (showRequest && editField) {
+    reqBtn = ' <button class="btn btn-ghost btn-sm" style="padding:3px 8px;font-size:11px;" onclick="openChangeRequestModal(\'' + esc(editField) + '\',\'' + esc(currentVal||"") + '\')">Request Change</button>';
+  }
+  return '<div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid rgba(42,47,62,.5);">' +
+         '<span style="font-size:12px;color:var(--muted);">' + esc(label) + '</span>' +
+         '<div style="display:flex;align-items:center;gap:8px;"><span style="font-size:13px;">' + esc(display) + '</span>' + reqBtn + '</div>' +
+         '</div>';
 }
 
 function openChangeRequestModal(field, currentVal) {
@@ -1348,457 +1367,482 @@ function openChangeRequestModal(field, currentVal) {
   openModal("changeRequestModal");
 }
 
-async function submitChangeRequest() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const r = await api({
+function submitChangeRequest() {
+  var empId = currentUser.employeeId || currentUser.username;
+  api({
     action: "submitChangeRequest",
     employeeId: empId,
     employeeName: currentUser.fullName,
     field: document.getElementById("cr_field").value,
     oldValue: document.getElementById("cr_old").value,
     newValue: document.getElementById("cr_new").value
+  }).then(function(r) {
+    if (r.success) { toast("Change request submitted - pending admin approval","success"); closeModal("changeRequestModal"); }
+    else toast("Error: " + r.error, "error");
   });
-  if (r.success) { toast("Change request submitted — pending admin approval","success"); closeModal("changeRequestModal"); }
-  else toast("Error: " + r.error, "error");
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  EMPLOYEES
-// ═══════════════════════════════════════════════════════════════
-async function loadEmployees() {
-  const r = await api({action:"getAllEmployees"});
-  allEmployees = r.employees || [];
-  // populate dept filter
-  const depts = [...new Set(allEmployees.map(e=>e.Department).filter(Boolean))];
-  const df = document.getElementById("empDeptFilter");
-  df.innerHTML = '<option value="">All Departments</option>' + depts.map(d=>`<option value="${d}">${d}</option>`).join("");
-  // populate doc employee filter
-  const docEf = document.getElementById("docEmpFilter");
-  docEf.innerHTML = '<option value="">Select Employee…</option>' + allEmployees.map(e=>`<option value="${e["Employee ID"]}">${e["Full Name"]}</option>`).join("");
-  const docEf2 = document.getElementById("docEmpSelect");
-  docEf2.innerHTML = '<option value="">Select Employee…</option>' + allEmployees.map(e=>`<option value="${e["Employee ID"]}">${e["Full Name"]} (${e["Employee ID"]})</option>`).join("");
-  // salary modal
-  const salSel = document.getElementById("sal_empid");
-  salSel.innerHTML = '<option value="">Select…</option>' + allEmployees.map(e=>`<option value="${e["Employee ID"]}">${e["Full Name"]} (${e["Employee ID"]})</option>`).join("");
+// EMPLOYEES
+function loadEmployees() {
+  api({action:"getAllEmployees"}).then(function(r) {
+    allEmployees = r.employees || [];
+    var depts = [];
+    allEmployees.forEach(function(e) { if(e.Department && depts.indexOf(e.Department)<0) depts.push(e.Department); });
 
-  renderEmployeeTable();
+    var df = document.getElementById("empDeptFilter");
+    df.innerHTML = '<option value="">All Departments</option>' + depts.map(function(d){return '<option value="'+esc(d)+'">'+esc(d)+'</option>';}).join("");
+
+    var docEf = document.getElementById("docEmpFilter");
+    docEf.innerHTML = '<option value="">Select Employee...</option>' + allEmployees.map(function(e){
+      return '<option value="'+esc(e["Employee ID"])+'">'+esc(e["Full Name"])+'</option>';
+    }).join("");
+
+    var docEf2 = document.getElementById("docEmpSelect");
+    docEf2.innerHTML = '<option value="">Select Employee...</option>' + allEmployees.map(function(e){
+      return '<option value="'+esc(e["Employee ID"])+'">'+esc(e["Full Name"])+' ('+esc(e["Employee ID"])+')</option>';
+    }).join("");
+
+    var salSel = document.getElementById("sal_empid");
+    salSel.innerHTML = '<option value="">Select...</option>' + allEmployees.map(function(e){
+      return '<option value="'+esc(e["Employee ID"])+'">'+esc(e["Full Name"])+' ('+esc(e["Employee ID"])+')</option>';
+    }).join("");
+
+    renderEmployeeTable();
+  });
 }
 
 function renderEmployeeTable() {
-  const q    = document.getElementById("empSearch").value.toLowerCase();
-  const dept = document.getElementById("empDeptFilter").value;
-  const stat = document.getElementById("empStatusFilter").value;
-  const role = currentUser.role;
+  var q    = document.getElementById("empSearch").value.toLowerCase();
+  var dept = document.getElementById("empDeptFilter").value;
+  var stat = document.getElementById("empStatusFilter").value;
+  var role = currentUser.role;
 
-  let filtered = allEmployees.filter(e => {
+  var filtered = allEmployees.filter(function(e) {
     if (role === "SuperUser") {
-      // only see own department
-      const myDept = allEmployees.find(emp => emp["Employee ID"] === (currentUser.employeeId||""))?.Department;
+      var myEmp  = allEmployees.filter(function(emp){ return emp["Employee ID"] === (currentUser.employeeId||""); })[0];
+      var myDept = myEmp ? myEmp.Department : null;
       if (myDept && e.Department !== myDept) return false;
     }
     if (dept && e.Department !== dept) return false;
     if (stat && e.Status !== stat) return false;
     if (q) {
-      const s = (e["Employee ID"]||"") + (e["Full Name"]||"") + (e.Department||"") + (e.Designation||"");
-      if (!s.toLowerCase().includes(q)) return false;
+      var s = (e["Employee ID"]||"") + (e["Full Name"]||"") + (e.Department||"") + (e.Designation||"");
+      if (s.toLowerCase().indexOf(q) < 0) return false;
     }
     return true;
   });
 
-  const tbody = document.getElementById("empTableBody");
-  tbody.innerHTML = filtered.length === 0
-    ? `<tr><td colspan="7" class="empty-state">No employees found</td></tr>`
-    : filtered.map(e => {
-        const canEdit = role === "Admin" || role === "Manager";
-        return `<tr>
-          <td>${e["Employee ID"]||"—"}</td>
-          <td><strong>${e["Full Name"]||"—"}</strong></td>
-          <td>${e.Department||"—"}</td>
-          <td>${e.Designation||"—"}</td>
-          <td>${fmt(e["Date of Joining"])}</td>
-          <td>${badgeForStatus(e.Status||"Active")}</td>
-          <td>
-            <button class="btn btn-ghost btn-sm" onclick="viewEmployeeProfile('${e["Employee ID"]}')">View</button>
-            ${canEdit?`<button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal('${e["Employee ID"]}')">Edit</button>`:""}
-          </td>
-        </tr>`;
-      }).join("");
+  var canEdit = (role === "Admin" || role === "Manager");
+  var tbody = document.getElementById("empTableBody");
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No employees found</td></tr>';
+    return;
+  }
+  tbody.innerHTML = filtered.map(function(e) {
+    var id = esc(e["Employee ID"]||"");
+    var editBtn = canEdit ? '<button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal(\''+id+'\')">Edit</button>' : "";
+    return '<tr>' +
+      '<td>' + id + '</td>' +
+      '<td><strong>' + esc(e["Full Name"]||"-") + '</strong></td>' +
+      '<td>' + esc(e.Department||"-") + '</td>' +
+      '<td>' + esc(e.Designation||"-") + '</td>' +
+      '<td>' + fmt(e["Date of Joining"]) + '</td>' +
+      '<td>' + badgeForStatus(e.Status||"Active") + '</td>' +
+      '<td><button class="btn btn-ghost btn-sm" onclick="viewEmployeeProfile(\''+id+'\')">View</button> ' + editBtn + '</td>' +
+      '</tr>';
+  }).join("");
 }
 
 function viewEmployeeProfile(empId) {
   navigate("profile");
-  currentUser._viewingEmpId = empId;
   loadEmployeeProfileById(empId);
 }
 
-async function loadEmployeeProfileById(empId) {
-  const r = await api({action:"getEmployee", employeeId:empId});
-  const e = r.employee;
-  if (!e) { document.getElementById("profileContent").innerHTML = `<div class="alert alert-error">Employee not found</div>`; return; }
-  const photoSrc = e["Photo URL"] || "https://ui-avatars.com/api/?name=" + encodeURIComponent(e["Full Name"]||"?") + "&background=6c63ff&color=fff&size=80";
-  const crR = await api({action:"getChangeRequests", employeeId:empId});
-  document.getElementById("profileContent").innerHTML = `
-    <div class="alert alert-info mb-4" style="font-size:12px;">Viewing profile of ${e["Full Name"]}</div>
-    <div class="profile-header">
-      <img src="${photoSrc}" class="profile-avatar">
-      <div class="profile-info">
-        <h2>${e["Full Name"]||"—"}</h2>
-        <p>${e.Designation||"—"} · ${e.Department||"—"}</p>
-        <div class="profile-meta">${badgeForStatus(e.Status||"Active")}<span class="tag">${e["Employment Type"]||""}</span></div>
-      </div>
-      <button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal('${empId}')">✏ Edit</button>
-    </div>
-    <div class="grid-2">
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Personal</div>
-        ${profileRow("DOB",fmt(e["Date of Birth"]))}${profileRow("Phone",e.Phone)}${profileRow("Email",e.Email)}
-        ${profileRow("PAN",e.PAN)}${profileRow("Aadhaar",e.Aadhaar)}${profileRow("Address",e.Address)}
-        ${profileRow("Emergency",e["Emergency Contact"])}
-      </div>
-      <div class="card">
-        <div style="font-weight:600;margin-bottom:12px;">Work</div>
-        ${profileRow("Emp ID",e["Employee ID"])}${profileRow("Dept",e.Department)}${profileRow("Role",e.Designation)}
-        ${profileRow("Joined",fmt(e["Date of Joining"]))}${profileRow("Manager",e["Reporting Manager"])}
-        ${profileRow("Education",e.Education)}
-      </div>
-    </div>
-    <div class="card mt-4">
-      <div style="font-weight:600;margin-bottom:12px;">Pending Change Requests</div>
-      ${(crR.requests||[]).filter(r=>r.Status==="Pending").length===0?"<p class='text-muted' style='font-size:13px;'>None</p>":
-        (crR.requests||[]).filter(r=>r.Status==="Pending").map(r=>
-          `<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">
-            <div><strong>${r.Field}</strong>: ${r["Old Value"]||"—"} → <span class="text-green">${r["New Value"]||"—"}</span></div>
-            <div style="display:flex;gap:8px;">
-              <button class="btn btn-success btn-sm" onclick="reviewCR('${r["Request ID"]}','Approved')">✓</button>
-              <button class="btn btn-danger btn-sm" onclick="reviewCR('${r["Request ID"]}','Rejected')">✗</button>
-            </div>
-          </div>`).join("")
+function loadEmployeeProfileById(empId) {
+  api({action:"getEmployee", employeeId:empId}).then(function(r) {
+    var e = r.employee;
+    if (!e) { document.getElementById("profileContent").innerHTML = '<div class="alert alert-error">Employee not found</div>'; return; }
+    return api({action:"getChangeRequests", employeeId:empId}).then(function(crR) {
+      var photoSrc = e["Photo URL"] || "https://ui-avatars.com/api/?name=" + encodeURIComponent(e["Full Name"]||"?") + "&background=6c63ff&color=fff&size=80";
+      var pending = (crR.requests||[]).filter(function(req){return req.Status==="Pending";});
+
+      var html = '<div class="alert alert-info mb-4" style="font-size:12px;">Viewing profile of ' + esc(e["Full Name"]) + '</div>';
+      html += '<div class="profile-header">';
+      html += '<img src="' + esc(photoSrc) + '" class="profile-avatar">';
+      html += '<div class="profile-info"><h2>' + esc(e["Full Name"]||"-") + '</h2>';
+      html += '<p>' + esc(e.Designation||"-") + ' - ' + esc(e.Department||"-") + '</p>';
+      html += '<div class="profile-meta">' + badgeForStatus(e.Status||"Active") + '</div></div>';
+      html += '<button class="btn btn-ghost btn-sm" onclick="openEditEmployeeModal(\''+esc(empId)+'\')">Edit</button>';
+      html += '</div>';
+      html += '<div class="grid-2">';
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Personal</div>';
+      html += profileRow("DOB",fmt(e["Date of Birth"]),null,false,null);
+      html += profileRow("Phone",e.Phone,null,false,null);
+      html += profileRow("Email",e.Email,null,false,null);
+      html += profileRow("PAN",e.PAN,null,false,null);
+      html += profileRow("Aadhaar",e.Aadhaar,null,false,null);
+      html += profileRow("Address",e.Address,null,false,null);
+      html += '</div>';
+      html += '<div class="card"><div style="font-weight:600;margin-bottom:12px;">Work</div>';
+      html += profileRow("Emp ID",e["Employee ID"],null,false,null);
+      html += profileRow("Dept",e.Department,null,false,null);
+      html += profileRow("Role",e.Designation,null,false,null);
+      html += profileRow("Joined",fmt(e["Date of Joining"]),null,false,null);
+      html += profileRow("Manager",e["Reporting Manager"],null,false,null);
+      html += '</div></div>';
+
+      html += '<div class="card mt-4"><div style="font-weight:600;margin-bottom:12px;">Pending Change Requests</div>';
+      if (pending.length === 0) {
+        html += '<p class="text-muted" style="font-size:13px;">No pending change requests</p>';
+      } else {
+        pending.forEach(function(req) {
+          html += '<div style="display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid var(--border);">';
+          html += '<div><strong>' + esc(req.Field) + '</strong>: ' + esc(req["Old Value"]||"-") + ' to <span class="text-green">' + esc(req["New Value"]||"-") + '</span></div>';
+          html += '<div style="display:flex;gap:8px;">';
+          html += '<button class="btn btn-success btn-sm" onclick="reviewCR(\''+esc(req["Request ID"])+'\',\'Approved\')">Approve</button>';
+          html += '<button class="btn btn-danger btn-sm" onclick="reviewCR(\''+esc(req["Request ID"])+'\',\'Rejected\')">Reject</button>';
+          html += '</div></div>';
+        });
       }
-    </div>`;
+      html += '</div>';
+      document.getElementById("profileContent").innerHTML = html;
+    });
+  });
 }
 
-async function reviewCR(id, status) {
-  const r = await api({action:"reviewChangeRequest", requestId:id, status, reviewedBy:currentUser.fullName});
-  if (r.success) { toast("Change request " + status.toLowerCase(), "success"); navigate("employees"); }
+function reviewCR(id, status) {
+  api({action:"reviewChangeRequest", requestId:id, status:status, reviewedBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("Change request " + status.toLowerCase(), "success"); navigate("employees"); }
+  });
 }
 
 function openAddEmployeeModal() {
   document.getElementById("empModalTitle").textContent = "Add Employee";
-  ["emp_id","emp_name","emp_dept","emp_desig","emp_doj","emp_dob","emp_phone","emp_email",
-   "emp_pan","emp_aadhaar","emp_address","emp_edu","emp_exp","emp_emergency",
-   "emp_bank","emp_ifsc","emp_pf","emp_photo","emp_manager"].forEach(id => {
-    const el = document.getElementById(id);
-    if (el) el.value = "";
-  });
+  var ids = ["emp_id","emp_name","emp_dept","emp_desig","emp_doj","emp_dob","emp_phone","emp_email",
+             "emp_pan","emp_aadhaar","emp_address","emp_edu","emp_exp","emp_emergency",
+             "emp_bank","emp_ifsc","emp_pf","emp_photo","emp_manager"];
+  ids.forEach(function(id) { var el=document.getElementById(id); if(el) el.value=""; });
   document.getElementById("emp_status").value = "Active";
-  document.getElementById("emp_type").value = "Full-Time";
+  document.getElementById("emp_type").value   = "Full-Time";
   openModal("employeeModal");
 }
 
-async function openEditEmployeeModal(empId) {
-  const r = await api({action:"getEmployee", employeeId:empId});
-  const e = r.employee;
-  if (!e) { toast("Employee not found","error"); return; }
-  document.getElementById("empModalTitle").textContent = "Edit Employee";
-  const fields = {
-    emp_id:"Employee ID", emp_name:"Full Name", emp_dept:"Department", emp_desig:"Designation",
-    emp_doj:"Date of Joining", emp_dob:"Date of Birth", emp_phone:"Phone", emp_email:"Email",
-    emp_pan:"PAN", emp_aadhaar:"Aadhaar", emp_address:"Address", emp_edu:"Education",
-    emp_exp:"Experience", emp_emergency:"Emergency Contact", emp_manager:"Reporting Manager",
-    emp_bank:"Bank Account", emp_ifsc:"IFSC", emp_pf:"PF Number", emp_photo:"Photo URL"
-  };
-  for (const [id, key] of Object.entries(fields)) {
-    const el = document.getElementById(id);
-    if (el) el.value = e[key] || "";
-  }
-  document.getElementById("emp_status").value = e.Status || "Active";
-  document.getElementById("emp_type").value   = e["Employment Type"] || "Full-Time";
-  openModal("employeeModal");
+function openEditEmployeeModal(empId) {
+  api({action:"getEmployee", employeeId:empId}).then(function(r) {
+    var e = r.employee;
+    if (!e) { toast("Employee not found","error"); return; }
+    document.getElementById("empModalTitle").textContent = "Edit Employee";
+    var fields = {
+      emp_id:"Employee ID", emp_name:"Full Name", emp_dept:"Department", emp_desig:"Designation",
+      emp_doj:"Date of Joining", emp_dob:"Date of Birth", emp_phone:"Phone", emp_email:"Email",
+      emp_pan:"PAN", emp_aadhaar:"Aadhaar", emp_address:"Address", emp_edu:"Education",
+      emp_exp:"Experience", emp_emergency:"Emergency Contact", emp_manager:"Reporting Manager",
+      emp_bank:"Bank Account", emp_ifsc:"IFSC", emp_pf:"PF Number", emp_photo:"Photo URL"
+    };
+    Object.keys(fields).forEach(function(id) {
+      var el = document.getElementById(id);
+      if (el) el.value = e[fields[id]] || "";
+    });
+    document.getElementById("emp_status").value = e.Status || "Active";
+    document.getElementById("emp_type").value   = e["Employment Type"] || "Full-Time";
+    openModal("employeeModal");
+  });
 }
 
-async function saveEmployee() {
-  const data = {
+function saveEmployee() {
+  var data = {
     action:"saveEmployee", doneBy:currentUser.fullName,
-    employeeId: document.getElementById("emp_id").value.trim(),
-    fullName:   document.getElementById("emp_name").value.trim(),
-    department: document.getElementById("emp_dept").value.trim(),
-    designation: document.getElementById("emp_desig").value.trim(),
-    dateOfJoining: document.getElementById("emp_doj").value,
-    dateOfBirth:   document.getElementById("emp_dob").value,
-    phone:   document.getElementById("emp_phone").value.trim(),
-    email:   document.getElementById("emp_email").value.trim(),
-    pan:     document.getElementById("emp_pan").value.trim(),
-    aadhaar: document.getElementById("emp_aadhaar").value.trim(),
-    address: document.getElementById("emp_address").value.trim(),
-    education: document.getElementById("emp_edu").value.trim(),
-    experience: document.getElementById("emp_exp").value.trim(),
+    employeeId:   document.getElementById("emp_id").value.trim(),
+    fullName:     document.getElementById("emp_name").value.trim(),
+    department:   document.getElementById("emp_dept").value.trim(),
+    designation:  document.getElementById("emp_desig").value.trim(),
+    dateOfJoining:document.getElementById("emp_doj").value,
+    dateOfBirth:  document.getElementById("emp_dob").value,
+    phone:        document.getElementById("emp_phone").value.trim(),
+    email:        document.getElementById("emp_email").value.trim(),
+    pan:          document.getElementById("emp_pan").value.trim(),
+    aadhaar:      document.getElementById("emp_aadhaar").value.trim(),
+    address:      document.getElementById("emp_address").value.trim(),
+    education:    document.getElementById("emp_edu").value.trim(),
+    experience:   document.getElementById("emp_exp").value.trim(),
     emergencyContact: document.getElementById("emp_emergency").value.trim(),
-    employmentType: document.getElementById("emp_type").value,
+    employmentType:   document.getElementById("emp_type").value,
     reportingManager: document.getElementById("emp_manager").value.trim(),
     status:    document.getElementById("emp_status").value,
     photoUrl:  document.getElementById("emp_photo").value.trim(),
-    bankAccount: document.getElementById("emp_bank").value.trim(),
+    bankAccount:document.getElementById("emp_bank").value.trim(),
     ifsc:      document.getElementById("emp_ifsc").value.trim(),
     pfNumber:  document.getElementById("emp_pf").value.trim()
   };
-  if (!data.employeeId || !data.fullName) { toast("Employee ID and Full Name required","error"); return; }
-  const r = await api(data);
-  if (r.success) { toast("Employee saved","success"); closeModal("employeeModal"); loadEmployees(); }
-  else toast("Error: " + r.error, "error");
-}
-
-// ═══════════════════════════════════════════════════════════════
-//  ATTENDANCE
-// ═══════════════════════════════════════════════════════════════
-let hasPunchedIn = false;
-
-async function checkTodayPunch() {
-  const today = new Date().toISOString().split("T")[0];
-  const empId = currentUser.employeeId || currentUser.username;
-  const r = await api({action:"getAttendance", employeeId:empId, date:today});
-  const punches = r.attendance || [];
-  const lastPunch = punches[punches.length-1];
-  const punchBtn   = document.getElementById("punchBtn");
-  const punchLabel = document.getElementById("punchBtnLabel");
-  const punchStatus = document.getElementById("punchStatus");
-
-  const todayDiv = document.getElementById("todayPunches");
-  if (todayDiv) {
-    todayDiv.innerHTML = punches.length
-      ? "<div style='font-size:12px;font-weight:600;margin-bottom:8px;color:var(--muted);'>TODAY'S PUNCHES</div>" +
-        punches.map(p=>`<div class="flex justify-between" style="font-size:12px;padding:4px 0;"><span>${p["Punch Type"]}</span><span>${fmt(p.Timestamp)}</span></div>`).join("")
-      : "<p class='text-muted' style='font-size:12px;'>No punches today</p>";
-  }
-
-  if (lastPunch && (lastPunch["Punch Type"]==="IN" || lastPunch["Punch Type"]==="Punch In")) {
-    hasPunchedIn = true;
-    if (punchBtn) punchBtn.classList.add("out");
-    if (punchLabel) punchLabel.textContent = "PUNCH OUT";
-    if (punchStatus) punchStatus.textContent = "Last punch in: " + fmt(lastPunch.Timestamp);
-  } else {
-    hasPunchedIn = false;
-    if (punchBtn) punchBtn.classList.remove("out");
-    if (punchLabel) punchLabel.textContent = "PUNCH IN";
-    if (punchStatus) punchStatus.textContent = punches.length ? "Last punch out: " + fmt(lastPunch?.Timestamp) : "Not punched in yet";
-  }
-}
-
-async function doPunch() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const punchType = hasPunchedIn ? "OUT" : "IN";
-
-  // Get GPS
-  let lat = "", lng = "";
-  try {
-    const pos = await new Promise((res,rej) => navigator.geolocation.getCurrentPosition(res,rej,{timeout:5000}));
-    lat = pos.coords.latitude.toFixed(6);
-    lng = pos.coords.longitude.toFixed(6);
-    document.getElementById("locationInfo").textContent = `📍 ${lat}, ${lng}`;
-  } catch(e) {
-    document.getElementById("locationInfo").textContent = "📍 Location unavailable";
-  }
-
-  // Capture face if webcam active
-  let faceCaptured = "No";
-  if (webcamStream) {
-    try {
-      const canvas = document.getElementById("faceCanvas");
-      const video  = document.getElementById("webcamFeed");
-      canvas.width = video.videoWidth; canvas.height = video.videoHeight;
-      canvas.getContext("2d").drawImage(video,0,0);
-      faceCaptured = "Yes";
-    } catch(e) {}
-  }
-
-  const r = await api({
-    action:"punchAttendance",
-    employeeId: empId,
-    employeeName: currentUser.fullName,
-    punchType,
-    latitude: lat, longitude: lng,
-    faceCaptured,
-    deviceInfo: navigator.userAgent.substring(0,80)
+  if (!data.employeeId || !data.fullName) { toast("Employee ID and Full Name are required","error"); return; }
+  api(data).then(function(r) {
+    if (r.success) { toast("Employee saved","success"); closeModal("employeeModal"); loadEmployees(); }
+    else toast("Error: " + r.error, "error");
   });
+}
 
-  if (r.success) {
-    toast(`Punched ${punchType} at ${new Date().toLocaleTimeString("en-IN")}`, "success");
-    checkTodayPunch();
+// ATTENDANCE
+var hasPunchedIn = false;
+
+function checkTodayPunch() {
+  var empId = currentUser.employeeId || currentUser.username;
+  var today = new Date().toISOString().split("T")[0];
+  api({action:"getAttendance", employeeId:empId, date:today}).then(function(r) {
+    var punches = r.attendance || [];
+    var lastPunch = punches[punches.length-1];
+    var punchBtn   = document.getElementById("punchBtn");
+    var punchLabel = document.getElementById("punchBtnLabel");
+    var punchStatus= document.getElementById("punchStatus");
+    var todayDiv   = document.getElementById("todayPunches");
+
+    if (todayDiv) {
+      if (punches.length) {
+        var phtml = '<div style="font-size:12px;font-weight:600;margin-bottom:8px;color:var(--muted);">TODAY\'S PUNCHES</div>';
+        punches.forEach(function(p) {
+          phtml += '<div class="flex justify-between" style="font-size:12px;padding:4px 0;"><span>' + esc(p["Punch Type"]) + '</span><span>' + fmt(p.Timestamp) + '</span></div>';
+        });
+        todayDiv.innerHTML = phtml;
+      } else {
+        todayDiv.innerHTML = '<p class="text-muted" style="font-size:12px;">No punches today</p>';
+      }
+    }
+
+    var isIn = lastPunch && (lastPunch["Punch Type"]==="IN" || lastPunch["Punch Type"]==="Punch In");
+    hasPunchedIn = !!isIn;
+    if (punchBtn)   punchBtn.className   = "punch-btn" + (isIn ? " out" : "");
+    if (punchLabel) punchLabel.textContent = isIn ? "PUNCH OUT" : "PUNCH IN";
+    if (punchStatus) punchStatus.textContent = isIn
+      ? "Last punch in: " + fmt(lastPunch.Timestamp)
+      : (punches.length ? "Last punch out: " + fmt(lastPunch.Timestamp) : "Not punched in today");
+  });
+}
+
+function doPunch() {
+  var empId = currentUser.employeeId || currentUser.username;
+  var punchType = hasPunchedIn ? "OUT" : "IN";
+  var lat = "", lng = "";
+  var locationEl = document.getElementById("locationInfo");
+
+  function doActualPunch() {
+    var faceCaptured = "No";
+    if (webcamStream) {
+      try {
+        var canvas = document.getElementById("faceCanvas");
+        var video  = document.getElementById("webcamFeed");
+        canvas.width = video.videoWidth; canvas.height = video.videoHeight;
+        canvas.getContext("2d").drawImage(video,0,0);
+        faceCaptured = "Yes";
+      } catch(e) {}
+    }
+    api({
+      action:"punchAttendance",
+      employeeId:   empId,
+      employeeName: currentUser.fullName,
+      punchType:    punchType,
+      latitude:     lat,
+      longitude:    lng,
+      faceCaptured: faceCaptured,
+      deviceInfo:   navigator.userAgent.substring(0,80)
+    }).then(function(r) {
+      if (r.success) {
+        toast("Punched " + punchType + " at " + new Date().toLocaleTimeString("en-IN"), "success");
+        checkTodayPunch();
+      } else toast("Punch failed","error");
+    });
+  }
+
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition(
+      function(pos) {
+        lat = pos.coords.latitude.toFixed(6);
+        lng = pos.coords.longitude.toFixed(6);
+        if (locationEl) locationEl.textContent = "Location: " + lat + ", " + lng;
+        doActualPunch();
+      },
+      function() {
+        if (locationEl) locationEl.textContent = "Location unavailable";
+        doActualPunch();
+      },
+      {timeout:5000}
+    );
   } else {
-    toast("Punch failed","error");
+    doActualPunch();
   }
 }
 
 function startWebcam() {
-  navigator.mediaDevices.getUserMedia({video:true}).then(stream => {
+  navigator.mediaDevices.getUserMedia({video:true}).then(function(stream) {
     webcamStream = stream;
-    const v = document.getElementById("webcamFeed");
+    var v = document.getElementById("webcamFeed");
     v.srcObject = stream; v.style.display = "block";
     toast("Camera ready","success");
-  }).catch(() => toast("Camera access denied","error"));
+  }).catch(function() { toast("Camera access denied","error"); });
 }
 
-async function loadMyAttendance() {
-  const empId  = currentUser.employeeId || currentUser.username;
-  const month  = document.getElementById("attMonthFilter").value;
-  const r      = await api({action:"getAttendance", employeeId:empId});
-  let records  = r.attendance || [];
-  if (month) records = records.filter(a => a.Date && a.Date.startsWith(month));
-  // Group by date
-  const byDate = {};
-  records.forEach(a => {
-    if (!byDate[a.Date]) byDate[a.Date] = [];
-    byDate[a.Date].push(a);
+function loadMyAttendance() {
+  var empId  = currentUser.employeeId || currentUser.username;
+  var month  = document.getElementById("attMonthFilter").value;
+  api({action:"getAttendance", employeeId:empId}).then(function(r) {
+    var records = r.attendance || [];
+    if (month) records = records.filter(function(a){ return a.Date && a.Date.indexOf(month)===0; });
+    var byDate = {};
+    records.forEach(function(a) {
+      if (!byDate[a.Date]) byDate[a.Date] = [];
+      byDate[a.Date].push(a);
+    });
+    var dates = Object.keys(byDate).sort().reverse();
+    var tbody = document.getElementById("attRecordsBody");
+    if (dates.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No attendance records</td></tr>';
+      return;
+    }
+    tbody.innerHTML = dates.map(function(date) {
+      var punches  = byDate[date];
+      var inPunch  = null, outPunch = null;
+      punches.forEach(function(p) {
+        if (!inPunch  && (p["Punch Type"]==="IN"  || p["Punch Type"]==="Punch In"))  inPunch = p;
+        if (p["Punch Type"]==="OUT" || p["Punch Type"]==="Punch Out") outPunch = p;
+      });
+      var hours = "-";
+      if (inPunch && outPunch) {
+        var diff = (new Date(outPunch.Timestamp) - new Date(inPunch.Timestamp)) / 3600000;
+        hours = diff.toFixed(1) + "h";
+      }
+      var loc = (inPunch && inPunch.Latitude && inPunch.Longitude) ? inPunch.Latitude + ", " + inPunch.Longitude : "-";
+      return '<tr><td>' + fmt(date) + '</td><td>' + (inPunch?fmt(inPunch.Timestamp):"-") + '</td><td>' + (outPunch?fmt(outPunch.Timestamp):"-") + '</td><td>' + hours + '</td><td style="font-size:11px;">' + loc + '</td></tr>';
+    }).join("");
   });
-  const tbody = document.getElementById("attRecordsBody");
-  const dates = Object.keys(byDate).sort().reverse();
-  tbody.innerHTML = dates.length === 0
-    ? `<tr><td colspan="5" class="empty-state">No records</td></tr>`
-    : dates.map(date => {
-        const punches  = byDate[date];
-        const inPunch  = punches.find(p=>p["Punch Type"]==="IN"||p["Punch Type"]==="Punch In");
-        const outPunch = punches.find(p=>p["Punch Type"]==="OUT"||p["Punch Type"]==="Punch Out");
-        let hours = "—";
-        if (inPunch && outPunch) {
-          const diff = (new Date(outPunch.Timestamp) - new Date(inPunch.Timestamp)) / 36e5;
-          hours = diff.toFixed(1) + "h";
-        }
-        const loc = inPunch ? (inPunch.Latitude && inPunch.Longitude ? `${inPunch.Latitude}, ${inPunch.Longitude}` : "—") : "—";
-        return `<tr><td>${fmt(date)}</td><td>${inPunch?fmt(inPunch.Timestamp):"—"}</td><td>${outPunch?fmt(outPunch.Timestamp):"—"}</td><td>${hours}</td><td style="font-size:11px;">${loc}</td></tr>`;
-      }).join("");
 }
 
-async function loadAdminAttendance() {
-  const date = document.getElementById("adminDateFilter").value;
-  if (!date) { toast("Select a date","error"); return; }
-  const r = await api({action:"getAttendanceByDate", date});
-  const records = r.attendance || [];
-  const tbody = document.getElementById("adminAttBody");
-  tbody.innerHTML = records.length === 0
-    ? `<tr><td colspan="5" class="empty-state">No records for this date</td></tr>`
-    : records.map(a => `<tr>
-        <td>${a["Employee Name"]||a["Employee ID"]||"—"}</td>
-        <td>${badgeForStatus(a["Punch Type"])}</td>
-        <td>${fmt(a.Timestamp)}</td>
-        <td style="font-size:11px;">${a.Latitude&&a.Longitude?`${a.Latitude}, ${a.Longitude}`:"—"}</td>
-        <td>${badgeForStatus(a["Face Captured"])}</td>
-      </tr>`).join("");
+function loadAdminAttendance() {
+  var date = document.getElementById("adminDateFilter").value;
+  if (!date) { toast("Please select a date","error"); return; }
+  api({action:"getAttendanceByDate", date:date}).then(function(r) {
+    var records = r.attendance || [];
+    var tbody = document.getElementById("adminAttBody");
+    if (records.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No records for this date</td></tr>';
+      return;
+    }
+    tbody.innerHTML = records.map(function(a) {
+      var loc = (a.Latitude && a.Longitude) ? a.Latitude + ", " + a.Longitude : "-";
+      return '<tr><td>' + esc(a["Employee Name"]||a["Employee ID"]||"-") + '</td><td>' + badgeForStatus(a["Punch Type"]) + '</td><td>' + fmt(a.Timestamp) + '</td><td style="font-size:11px;">' + loc + '</td><td>' + badgeForStatus(a["Face Captured"]) + '</td></tr>';
+    }).join("");
+  });
 }
 
-async function loadCorrections() {
-  const r     = await api({action:"getAttendanceCorrections"});
-  const all   = r.corrections || [];
-  const empId = currentUser.employeeId || currentUser.username;
-  const visible = currentUser.role === "Employee" ? all.filter(c=>c["Employee ID"]===empId) : all;
-  const canApprove = currentUser.role === "Admin" || currentUser.role === "Manager";
-  const tbody = document.getElementById("correctionsBody");
-  tbody.innerHTML = visible.length === 0
-    ? `<tr><td colspan="7" class="empty-state">No correction requests</td></tr>`
-    : visible.map(c => `<tr>
-        <td>${c["Request ID"]||"—"}</td>
-        <td>${c["Employee Name"]||c["Employee ID"]||"—"}</td>
-        <td>${fmt(c.Date)}</td>
-        <td>${c["Requested Punch In"]||"—"}</td>
-        <td>${c.Reason||"—"}</td>
-        <td>${badgeForStatus(c.Status)}</td>
-        <td>${canApprove && c.Status==="Pending"
-          ?`<button class="btn btn-success btn-sm" onclick="reviewCorrection('${c["Request ID"]}','Approved')">✓</button>
-             <button class="btn btn-danger btn-sm" onclick="reviewCorrection('${c["Request ID"]}','Rejected')">✗</button>`:"—"}
-        </td>
-      </tr>`).join("");
+function loadCorrections() {
+  api({action:"getAttendanceCorrections"}).then(function(r) {
+    var all   = r.corrections || [];
+    var empId = currentUser.employeeId || currentUser.username;
+    var visible = currentUser.role === "Employee" ? all.filter(function(c){return c["Employee ID"]===empId;}) : all;
+    var canApprove = (currentUser.role === "Admin" || currentUser.role === "Manager");
+    var tbody = document.getElementById("correctionsBody");
+    if (visible.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No correction requests</td></tr>';
+      return;
+    }
+    tbody.innerHTML = visible.map(function(c) {
+      var actionBtns = (canApprove && c.Status==="Pending")
+        ? '<button class="btn btn-success btn-sm" onclick="reviewCorrection(\''+esc(c["Request ID"])+'\',\'Approved\')">Approve</button> <button class="btn btn-danger btn-sm" onclick="reviewCorrection(\''+esc(c["Request ID"])+'\',\'Rejected\')">Reject</button>'
+        : "-";
+      return '<tr><td>' + esc(c["Request ID"]||"-") + '</td><td>' + esc(c["Employee Name"]||c["Employee ID"]||"-") + '</td><td>' + fmt(c.Date) + '</td><td>' + esc(c["Requested Punch In"]||"-") + '</td><td>' + esc(c.Reason||"-") + '</td><td>' + badgeForStatus(c.Status) + '</td><td>' + actionBtns + '</td></tr>';
+    }).join("");
+  });
 }
 
-async function reviewCorrection(id, status) {
-  const r = await api({action:"reviewAttendanceCorrection", requestId:id, status, reviewedBy:currentUser.fullName});
-  if (r.success) { toast("Correction " + status.toLowerCase(), "success"); loadCorrections(); }
+function reviewCorrection(id, status) {
+  api({action:"reviewAttendanceCorrection", requestId:id, status:status, reviewedBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("Correction " + status.toLowerCase(),"success"); loadCorrections(); }
+  });
 }
 
 function openCorrectionModal() { openModal("correctionModal"); }
 
-async function submitCorrection() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const r = await api({
+function submitCorrection() {
+  var empId = currentUser.employeeId || currentUser.username;
+  api({
     action:"correctAttendance",
-    employeeId: empId,
+    employeeId:   empId,
     employeeName: currentUser.fullName,
-    date:    document.getElementById("corr_date").value,
-    punchIn: document.getElementById("corr_in").value,
-    punchOut:document.getElementById("corr_out").value,
-    reason:  document.getElementById("corr_reason").value
+    date:     document.getElementById("corr_date").value,
+    punchIn:  document.getElementById("corr_in").value,
+    punchOut: document.getElementById("corr_out").value,
+    reason:   document.getElementById("corr_reason").value
+  }).then(function(r) {
+    if (r.success) { toast("Correction request submitted","success"); closeModal("correctionModal"); loadCorrections(); }
   });
-  if (r.success) { toast("Correction request submitted","success"); closeModal("correctionModal"); loadCorrections(); }
 }
 
 function exportAttendanceCSV() {
-  const rows = document.querySelectorAll("#attRecordsBody tr");
-  let csv = "Date,Punch In,Punch Out,Hours,Location\n";
-  rows.forEach(r => {
-    const cells = r.querySelectorAll("td");
-    if (cells.length >= 5) csv += Array.from(cells).map(c=>'"'+c.textContent+'"').join(",") + "\n";
+  var rows = document.querySelectorAll("#attRecordsBody tr");
+  var csv = "Date,Punch In,Punch Out,Hours,Location\n";
+  rows.forEach(function(row) {
+    var cells = row.querySelectorAll("td");
+    if (cells.length >= 5) {
+      csv += Array.from(cells).map(function(c){return '"'+c.textContent+'"';}).join(",") + "\n";
+    }
   });
-  const a = document.createElement("a");
+  var a = document.createElement("a");
   a.href = "data:text/csv," + encodeURIComponent(csv);
   a.download = "attendance_" + currentUser.username + ".csv";
   a.click();
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  LEAVES
-// ═══════════════════════════════════════════════════════════════
-async function loadLeaves() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const [leavesR, balR] = await Promise.all([
+// LEAVES
+function loadLeaves() {
+  var empId = currentUser.employeeId || currentUser.username;
+  Promise.all([
     api({action:"getLeaves", employeeId: empId}),
     api({action:"getLeaveBalance", employeeId: empId, year: new Date().getFullYear()})
-  ]);
-  allLeaves = leavesR.leaves || [];
-  const bal = balR.balance || {};
+  ]).then(function(results) {
+    allLeaves = results[0].leaves || [];
+    var bal = results[1].balance || {};
+    document.getElementById("leaveBalanceGrid").innerHTML =
+      '<div class="leave-balance-item"><div class="num text-green">' + (bal["Earned Leave"]!==undefined?bal["Earned Leave"]:15) + '</div><div class="lbl">Earned Leave</div></div>' +
+      '<div class="leave-balance-item"><div class="num text-gold">' + (bal["Sick Leave"]!==undefined?bal["Sick Leave"]:7) + '</div><div class="lbl">Sick Leave</div></div>' +
+      '<div class="leave-balance-item"><div class="num text-red">' + (bal["LWP Used"]||0) + '</div><div class="lbl">LWP Used</div></div>';
 
-  document.getElementById("leaveBalanceGrid").innerHTML = `
-    <div class="leave-balance-item"><div class="num text-green">${bal["Earned Leave"]??15}</div><div class="lbl">Earned Leave</div></div>
-    <div class="leave-balance-item"><div class="num text-gold">${bal["Sick Leave"]??7}</div><div class="lbl">Sick Leave</div></div>
-    <div class="leave-balance-item"><div class="num text-red">${bal["LWP Used"]??0}</div><div class="lbl">LWP Used</div></div>`;
-
-  const myLeaves = allLeaves.filter(l => l["Employee ID"] === empId);
-  const tbody = document.getElementById("myLeavesBody");
-  tbody.innerHTML = myLeaves.length === 0
-    ? `<tr><td colspan="8" class="empty-state">No leaves applied</td></tr>`
-    : myLeaves.slice().reverse().map(l => `<tr>
-        <td>${l["Leave ID"]||"—"}</td>
-        <td>${l["Leave Type"]||"—"}</td>
-        <td>${fmt(l["From Date"])}</td>
-        <td>${fmt(l["To Date"])}</td>
-        <td>${l.Days||"—"}</td>
-        <td>${l.Reason||"—"}</td>
-        <td>${badgeForStatus(l.Status)}</td>
-        <td style="font-size:11px;">${l["Sandwich Flag"]||"No"}</td>
-      </tr>`).join("");
+    var myLeaves = allLeaves.filter(function(l){ return l["Employee ID"]===empId; });
+    var tbody = document.getElementById("myLeavesBody");
+    if (myLeaves.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="8" class="empty-state">No leaves applied yet</td></tr>';
+      return;
+    }
+    tbody.innerHTML = myLeaves.slice().reverse().map(function(l) {
+      return '<tr><td>' + esc(l["Leave ID"]||"-") + '</td><td>' + esc(l["Leave Type"]||"-") + '</td><td>' + fmt(l["From Date"]) + '</td><td>' + fmt(l["To Date"]) + '</td><td>' + esc(l.Days||"-") + '</td><td>' + esc(l.Reason||"-") + '</td><td>' + badgeForStatus(l.Status) + '</td><td style="font-size:11px;">' + esc(l["Sandwich Flag"]||"No") + '</td></tr>';
+    }).join("");
+  });
 }
 
 function openLeaveModal() { openModal("leaveModal"); }
 
 function calcLeaveDays() {
-  const from = new Date(document.getElementById("lv_from").value);
-  const to   = new Date(document.getElementById("lv_to").value);
+  var from = new Date(document.getElementById("lv_from").value);
+  var to   = new Date(document.getElementById("lv_to").value);
   if (!isNaN(from) && !isNaN(to) && to >= from) {
-    let days = 0;
-    const temp = new Date(from);
+    var days = 0;
+    var temp = new Date(from);
     while (temp <= to) {
       if (temp.getDay() !== 0 && temp.getDay() !== 6) days++;
       temp.setDate(temp.getDate()+1);
     }
     document.getElementById("lv_days").value = days || 1;
-    // Sandwich check
-    let hasFri = false, hasMon = false;
-    const temp2 = new Date(from);
-    while (temp2 <= to) { if(temp2.getDay()===5)hasFri=true; if(temp2.getDay()===1)hasMon=true; temp2.setDate(temp2.getDate()+1); }
+    var hasFri = false, hasMon = false;
+    var temp2 = new Date(from);
+    while (temp2 <= to) {
+      if (temp2.getDay()===5) hasFri = true;
+      if (temp2.getDay()===1) hasMon = true;
+      temp2.setDate(temp2.getDate()+1);
+    }
     document.getElementById("sandwichAlert").style.display = (hasFri && hasMon) ? "flex" : "none";
   }
 }
 
-async function submitLeave() {
-  const empId = currentUser.employeeId || currentUser.username;
-  const r = await api({
-    action:       "applyLeave",
+function submitLeave() {
+  var empId = currentUser.employeeId || currentUser.username;
+  api({
+    action:"applyLeave",
     employeeId:   empId,
     employeeName: currentUser.fullName,
     leaveType:    document.getElementById("lv_type").value,
@@ -1806,183 +1850,183 @@ async function submitLeave() {
     toDate:       document.getElementById("lv_to").value,
     days:         document.getElementById("lv_days").value || 1,
     reason:       document.getElementById("lv_reason").value
+  }).then(function(r) {
+    if (r.success) {
+      toast("Leave application submitted","success");
+      if (r.sandwichFlag && r.sandwichFlag !== "No") toast("Warning: Sandwich rule may apply - " + r.sandwichFlag,"info");
+      closeModal("leaveModal"); loadLeaves();
+    } else toast("Error: " + r.error, "error");
   });
-  if (r.success) {
-    toast("Leave application submitted","success");
-    if (r.sandwichFlag && r.sandwichFlag !== "No") toast("⚠️ Sandwich rule flagged: " + r.sandwichFlag, "info");
-    closeModal("leaveModal"); loadLeaves();
-  } else toast("Error: " + r.error, "error");
 }
 
-async function loadAllLeaves() {
-  const status = document.getElementById("leaveStatusFilter").value;
-  const r = await api({action:"getLeaves"});
-  let leaves = r.leaves || [];
-  if (status) leaves = leaves.filter(l => l.Status === status);
-  const canApprove = currentUser.role === "Admin" || currentUser.role === "Manager";
-  const tbody = document.getElementById("allLeavesBody");
-  tbody.innerHTML = leaves.length === 0
-    ? `<tr><td colspan="7" class="empty-state">No leave requests</td></tr>`
-    : leaves.slice().reverse().map(l => `<tr>
-        <td>${l["Employee Name"]||l["Employee ID"]||"—"}</td>
-        <td>${l["Leave Type"]||"—"}</td>
-        <td>${fmt(l["From Date"])} – ${fmt(l["To Date"])}</td>
-        <td>${l.Days||"—"}</td>
-        <td>${badgeForStatus(l.Status)}</td>
-        <td style="font-size:11px;color:${l["Sandwich Flag"]&&l["Sandwich Flag"]!=="No"?"var(--warn)":"var(--muted)"};">${l["Sandwich Flag"]||"No"}</td>
-        <td>${canApprove && l.Status==="Pending"
-          ?`<button class="btn btn-success btn-sm" onclick="reviewLeave('${l["Leave ID"]}','Approved')">✓</button>
-             <button class="btn btn-danger btn-sm" onclick="reviewLeave('${l["Leave ID"]}','Rejected')">✗</button>`:"—"}
-        </td>
-      </tr>`).join("");
+function loadAllLeaves() {
+  var status = document.getElementById("leaveStatusFilter").value;
+  api({action:"getLeaves"}).then(function(r) {
+    var leaves = r.leaves || [];
+    if (status) leaves = leaves.filter(function(l){return l.Status===status;});
+    var canApprove = (currentUser.role==="Admin" || currentUser.role==="Manager");
+    var tbody = document.getElementById("allLeavesBody");
+    if (leaves.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="7" class="empty-state">No leave requests</td></tr>';
+      return;
+    }
+    tbody.innerHTML = leaves.slice().reverse().map(function(l) {
+      var actionBtns = (canApprove && l.Status==="Pending")
+        ? '<button class="btn btn-success btn-sm" onclick="reviewLeave(\''+esc(l["Leave ID"])+'\',\'Approved\')">Approve</button> <button class="btn btn-danger btn-sm" onclick="reviewLeave(\''+esc(l["Leave ID"])+'\',\'Rejected\')">Reject</button>'
+        : "-";
+      var sandColor = (l["Sandwich Flag"]&&l["Sandwich Flag"]!=="No") ? "color:var(--warn);" : "color:var(--muted);";
+      return '<tr><td>' + esc(l["Employee Name"]||l["Employee ID"]||"-") + '</td><td>' + esc(l["Leave Type"]||"-") + '</td><td>' + fmt(l["From Date"]) + ' to ' + fmt(l["To Date"]) + '</td><td>' + esc(l.Days||"-") + '</td><td>' + badgeForStatus(l.Status) + '</td><td style="font-size:11px;'+sandColor+'">' + esc(l["Sandwich Flag"]||"No") + '</td><td>' + actionBtns + '</td></tr>';
+    }).join("");
+  });
 }
 
-async function reviewLeave(id, status) {
-  const r = await api({action:"reviewLeave", leaveId:id, status, reviewedBy:currentUser.fullName});
-  if (r.success) { toast("Leave " + status.toLowerCase(), "success"); loadAllLeaves(); }
-  else toast("Error: " + r.error, "error");
+function reviewLeave(id, status) {
+  api({action:"reviewLeave", leaveId:id, status:status, reviewedBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("Leave " + status.toLowerCase(),"success"); loadAllLeaves(); }
+    else toast("Error: " + r.error,"error");
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  ASSETS
-// ═══════════════════════════════════════════════════════════════
-async function loadAssets() {
-  const [assR, histR] = await Promise.all([
+// ASSETS
+function loadAssets() {
+  Promise.all([
     api({action:"getAllAssets"}),
     api({action:"getAllHistory"})
-  ]);
-  allAssets  = assR.assets  || [];
-  allHistory = histR.history || [];
-
-  const cats = [...new Set(allAssets.map(a=>a.Category).filter(Boolean))];
-  const cf = document.getElementById("assetCatFilter");
-  cf.innerHTML = '<option value="">All Categories</option>' + cats.map(c=>`<option value="${c}">${c}</option>`).join("");
-
-  renderAssets();
-  renderMyAssets();
-  renderAssetHistory();
-  renderRecovery();
+  ]).then(function(results) {
+    allAssets  = results[0].assets  || [];
+    allHistory = results[1].history || [];
+    var cats = [];
+    allAssets.forEach(function(a){ if(a.Category && cats.indexOf(a.Category)<0) cats.push(a.Category); });
+    var cf = document.getElementById("assetCatFilter");
+    cf.innerHTML = '<option value="">All Categories</option>' + cats.map(function(c){return '<option value="'+esc(c)+'">'+esc(c)+'</option>';}).join("");
+    renderAssets();
+    renderMyAssets();
+    renderAssetHistory();
+    renderRecovery();
+  });
 }
 
 function renderAssets() {
-  const q   = document.getElementById("assetSearch").value.toLowerCase();
-  const cat = document.getElementById("assetCatFilter").value;
-  const role = currentUser.role;
-  const canEdit = role === "Admin" || role === "Manager";
+  var q   = document.getElementById("assetSearch").value.toLowerCase();
+  var cat = document.getElementById("assetCatFilter").value;
+  var role = currentUser.role;
+  var canEdit = (role==="Admin" || role==="Manager");
 
-  let filtered = allAssets.filter(a => {
+  var filtered = allAssets.filter(function(a) {
     if (cat && a.Category !== cat) return false;
     if (q) {
-      const s = (a["Asset ID"]||"")+(a["Asset Name"]||"")+(a["Serial Number"]||"")+(a["Current Holder"]||"");
-      if (!s.toLowerCase().includes(q)) return false;
+      var s = (a["Asset ID"]||"")+(a["Asset Name"]||"")+(a["Serial Number"]||"")+(a["Current Holder"]||"");
+      if (s.toLowerCase().indexOf(q) < 0) return false;
     }
     return true;
   });
 
-  document.getElementById("assetGrid").innerHTML = filtered.length === 0
-    ? `<div class="empty-state"><div class="icon">📦</div><div>No assets found</div></div>`
-    : filtered.map(a => `
-      <div class="asset-card">
-        <div class="a-name">${a["Asset Name"]||"—"}</div>
-        <div class="a-id">${a["Asset ID"]||"—"} · ${a.Category||"—"}</div>
-        <div style="font-size:12px;color:var(--muted);margin-top:6px;">
-          ${a["Brand/Model"]||a["brandModel"]||"—"} · S/N: ${a["Serial Number"]||"—"}
-        </div>
-        <div class="a-meta">
-          <span>${badgeForStatus(a.Condition||"Good")}</span>
-          <span style="font-size:12px;color:var(--muted);">${a["Current Holder"]||"Unassigned"}</span>
-        </div>
-        ${canEdit?`<div class="flex gap-2 mt-3">
-          <button class="btn btn-ghost btn-sm" onclick="openAllocateModal('${a["Asset ID"]}','${a["Asset Name"]}','Allocated')">Issue</button>
-          <button class="btn btn-ghost btn-sm" onclick="openAllocateModal('${a["Asset ID"]}','${a["Asset Name"]}','Returned')">Return</button>
-          <button class="btn btn-danger btn-sm manager-only" onclick="deleteAsset('${a["Asset ID"]}','${a["Asset Name"]}')">Del</button>
-        </div>`:""}
-      </div>`).join("");
+  if (filtered.length === 0) {
+    document.getElementById("assetGrid").innerHTML = '<div class="empty-state"><div style="font-size:40px;">box</div><div>No assets found</div></div>';
+    return;
+  }
+  document.getElementById("assetGrid").innerHTML = filtered.map(function(a) {
+    var id   = esc(a["Asset ID"]||"");
+    var name = esc(a["Asset Name"]||"-");
+    var btns = "";
+    if (canEdit) {
+      btns = '<div class="flex gap-2 mt-3">' +
+        '<button class="btn btn-ghost btn-sm" onclick="openAllocateModal(\''+id+'\',\''+name+'\',\'Allocated\')">Issue</button>' +
+        '<button class="btn btn-ghost btn-sm" onclick="openAllocateModal(\''+id+'\',\''+name+'\',\'Returned\')">Return</button>';
+      if (role==="Manager") btns += '<button class="btn btn-danger btn-sm" onclick="deleteAsset(\''+id+'\',\''+name+'\')">Delete</button>';
+      btns += '</div>';
+    }
+    return '<div class="asset-card">' +
+      '<div class="a-name">' + name + '</div>' +
+      '<div class="a-id">' + id + ' - ' + esc(a.Category||"-") + '</div>' +
+      '<div style="font-size:12px;color:var(--muted);margin-top:6px;">' + esc(a["Brand/Model"]||a.brandModel||"-") + ' - S/N: ' + esc(a["Serial Number"]||"-") + '</div>' +
+      '<div class="a-meta"><span>' + badgeForStatus(a.Condition||"Good") + '</span><span style="font-size:12px;color:var(--muted);">' + esc(a["Current Holder"]||"Unassigned") + '</span></div>' +
+      btns + '</div>';
+  }).join("");
 }
 
 function renderMyAssets() {
-  const empId   = (currentUser.employeeId || currentUser.username || "").toLowerCase();
-  const empName = (currentUser.fullName || "").toLowerCase();
-  const myA = allAssets.filter(a => {
-    const holder = (a["Current Holder"]||"").toLowerCase();
-    return holder === empId || holder.includes(empName) || holder.includes(empId);
+  var empId   = (currentUser.employeeId||currentUser.username||"").toLowerCase();
+  var empName = (currentUser.fullName||"").toLowerCase();
+  var myA = allAssets.filter(function(a) {
+    var holder = (a["Current Holder"]||"").toLowerCase();
+    return holder && (holder===empId || holder.indexOf(empName)>=0 || holder.indexOf(empId)>=0);
   });
-  const tbody = document.getElementById("myAssetsBody");
-  tbody.innerHTML = myA.length === 0
-    ? `<tr><td colspan="6" class="empty-state">No assets assigned to you</td></tr>`
-    : myA.map(a => `<tr>
-        <td>${a["Asset ID"]||"—"}</td><td>${a["Asset Name"]||"—"}</td>
-        <td>${a.Category||"—"}</td><td>${a["Serial Number"]||"—"}</td>
-        <td>${fmt(a["Last Updated"]||a["Purchase Date"])}</td>
-        <td>${badgeForStatus(a.Condition||"Good")}</td>
-      </tr>`).join("");
+  var tbody = document.getElementById("myAssetsBody");
+  if (myA.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No assets assigned to you</td></tr>';
+    return;
+  }
+  tbody.innerHTML = myA.map(function(a) {
+    return '<tr><td>' + esc(a["Asset ID"]||"-") + '</td><td>' + esc(a["Asset Name"]||"-") + '</td><td>' + esc(a.Category||"-") + '</td><td>' + esc(a["Serial Number"]||"-") + '</td><td>' + fmt(a["Last Updated"]||a["Purchase Date"]) + '</td><td>' + badgeForStatus(a.Condition||"Good") + '</td></tr>';
+  }).join("");
 }
 
 function renderAssetHistory() {
-  const tbody = document.getElementById("assetHistBody");
-  tbody.innerHTML = allHistory.length === 0
-    ? `<tr><td colspan="6" class="empty-state">No history</td></tr>`
-    : allHistory.slice().reverse().slice(0,100).map(h => `<tr>
-        <td>${fmt(h.Timestamp)}</td>
-        <td>${h["Asset Name"]||"—"}</td>
-        <td>${badgeForStatus(h["Action Type"]||"—")}</td>
-        <td>${h["Issued To"]||"—"}</td>
-        <td>${h["Received From"]||"—"}</td>
-        <td>${h["Done By"]||"—"}</td>
-      </tr>`).join("");
+  var tbody = document.getElementById("assetHistBody");
+  if (allHistory.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="6" class="empty-state">No history records</td></tr>';
+    return;
+  }
+  tbody.innerHTML = allHistory.slice().reverse().slice(0,100).map(function(h) {
+    return '<tr><td>' + fmt(h.Timestamp) + '</td><td>' + esc(h["Asset Name"]||"-") + '</td><td>' + badgeForStatus(h["Action Type"]||"-") + '</td><td>' + esc(h["Issued To"]||"-") + '</td><td>' + esc(h["Received From"]||"-") + '</td><td>' + esc(h["Done By"]||"-") + '</td></tr>';
+  }).join("");
 }
 
 function renderRecovery() {
-  if (!allEmployees.length) return;
-  const exitedEmps = allEmployees.filter(e => e.Status==="Exited"||e.Status==="Inactive").map(e=>(e["Full Name"]||"").toLowerCase());
-  const tbody = document.getElementById("recoveryBody");
-  const flagged = allAssets.filter(a => {
-    const holder = (a["Current Holder"]||"").toLowerCase();
-    return holder && holder !== "unassigned" && exitedEmps.some(en => holder.includes(en) || en.includes(holder));
+  var exitedNames = allEmployees.filter(function(e){ return e.Status==="Exited"||e.Status==="Inactive"; })
+    .map(function(e){ return (e["Full Name"]||"").toLowerCase(); });
+  var flagged = allAssets.filter(function(a) {
+    var holder = (a["Current Holder"]||"").toLowerCase();
+    if (!holder || holder==="unassigned") return false;
+    return exitedNames.some(function(en){ return holder.indexOf(en)>=0 || en.indexOf(holder)>=0; });
   });
-  tbody.innerHTML = flagged.length === 0
-    ? `<tr><td colspan="5" class="empty-state">No outstanding recoveries 🎉</td></tr>`
-    : flagged.map(a => `<tr>
-        <td>${a["Asset Name"]||"—"}</td>
-        <td>${a["Serial Number"]||"—"}</td>
-        <td><span class="red-flag">${a["Current Holder"]||"—"}</span></td>
-        <td>${a.Department||"—"}</td>
-        <td><span class="badge badge-red">🚩 Not Returned</span></td>
-      </tr>`).join("");
+  var tbody = document.getElementById("recoveryBody");
+  if (flagged.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No outstanding recoveries - all clear!</td></tr>';
+    return;
+  }
+  tbody.innerHTML = flagged.map(function(a) {
+    return '<tr><td>' + esc(a["Asset Name"]||"-") + '</td><td>' + esc(a["Serial Number"]||"-") + '</td><td><span class="red-flag">' + esc(a["Current Holder"]||"-") + '</span></td><td>' + esc(a.Department||"-") + '</td><td><span class="badge badge-red">Not Returned</span></td></tr>';
+  }).join("");
 }
 
 function openAddAssetModal() {
   document.getElementById("assetModalTitle").textContent = "Add New Asset";
-  ["a_id","a_name","a_brand","a_serial","a_pdate","a_cost","a_holder","a_dept","a_desc"].forEach(id=>{const el=document.getElementById(id);if(el)el.value="";});
+  ["a_id","a_name","a_brand","a_serial","a_pdate","a_cost","a_holder","a_dept","a_desc"].forEach(function(id){
+    var el = document.getElementById(id); if(el) el.value="";
+  });
   openModal("addAssetModal");
 }
 
-async function checkSerial() {
-  const serial = document.getElementById("a_serial").value.trim();
+function checkSerial() {
+  var serial = document.getElementById("a_serial").value.trim();
   if (!serial) return;
-  const r = await api({action:"checkSerial", serial});
-  if (r.duplicate) toast(`⚠️ Serial already exists: ${r.assetName} (${r.assetId})`, "error");
+  api({action:"checkSerial", serial:serial}).then(function(r) {
+    if (r.duplicate) toast("Warning: Serial already exists - " + r.assetName + " (" + r.assetId + ")","error");
+  });
 }
 
-async function saveAsset() {
-  const data = {
+function saveAsset() {
+  var data = {
     action:"addAsset", addedBy:currentUser.fullName,
-    assetId:    document.getElementById("a_id").value.trim(),
-    assetName:  document.getElementById("a_name").value.trim(),
-    category:   document.getElementById("a_cat").value,
-    brandModel: document.getElementById("a_brand").value.trim(),
+    assetId:     document.getElementById("a_id").value.trim(),
+    assetName:   document.getElementById("a_name").value.trim(),
+    category:    document.getElementById("a_cat").value,
+    brandModel:  document.getElementById("a_brand").value.trim(),
     serialNumber:document.getElementById("a_serial").value.trim(),
     purchaseDate:document.getElementById("a_pdate").value,
     purchaseCost:document.getElementById("a_cost").value,
-    condition:  document.getElementById("a_cond").value,
+    condition:   document.getElementById("a_cond").value,
     currentHolder:document.getElementById("a_holder").value.trim(),
-    department: document.getElementById("a_dept").value.trim(),
-    description:document.getElementById("a_desc").value.trim()
+    department:  document.getElementById("a_dept").value.trim(),
+    description: document.getElementById("a_desc").value.trim()
   };
-  if (!data.assetId || !data.assetName) { toast("Asset ID and Name required","error"); return; }
-  const r = await api(data);
-  if (r.success) { toast("Asset added","success"); closeModal("addAssetModal"); loadAssets(); }
-  else toast("Error: " + r.error, "error");
+  if (!data.assetId || !data.assetName) { toast("Asset ID and Name are required","error"); return; }
+  api(data).then(function(r) {
+    if (r.success) { toast("Asset added","success"); closeModal("addAssetModal"); loadAssets(); }
+    else toast("Error: " + r.error,"error");
+  });
 }
 
 function openAllocateModal(assetId, assetName, action) {
@@ -1995,159 +2039,158 @@ function openAllocateModal(assetId, assetName, action) {
   openModal("assetActionModal");
 }
 
-async function doAssetAction() {
-  const assetId   = document.getElementById("aa_assetId").value;
-  const assetName = document.getElementById("aa_assetName").value;
-  const action    = document.getElementById("aa_action").value;
-  const params = {
+function doAssetAction() {
+  var assetId   = document.getElementById("aa_assetId").value;
+  var assetName = document.getElementById("aa_assetName").value;
+  var action    = document.getElementById("aa_action").value;
+  var condition = action==="Allocated" ? document.getElementById("aa_cond").value : document.getElementById("aa_retCond").value;
+  var params = {
     action:"addHistory", doneBy:currentUser.fullName,
-    assetId, assetName, actionType: action,
-    issuedTo:   document.getElementById("aa_issuedTo").value.trim(),
+    assetId:assetId, assetName:assetName, actionType:action,
+    issuedTo:    document.getElementById("aa_issuedTo").value.trim(),
     receivedFrom:document.getElementById("aa_returnedBy").value.trim(),
-    department: document.getElementById("aa_dept").value.trim(),
-    condition:  action==="Allocated"?document.getElementById("aa_cond").value:document.getElementById("aa_retCond").value,
-    notes:      document.getElementById("aa_notes").value.trim()
+    department:  document.getElementById("aa_dept").value.trim(),
+    condition:   condition,
+    notes:       document.getElementById("aa_notes").value.trim()
   };
-  const r = await api(params);
-  if (r.success) {
-    // also update asset record
-    await api({
-      action:"updateAsset", assetId,
-      currentHolder: action==="Allocated" ? params.issuedTo : "Unassigned",
-      condition: params.condition,
-      department: params.department
-    });
+  api(params).then(function(r) {
+    if (r.success) {
+      return api({
+        action:"updateAsset", assetId:assetId,
+        currentHolder: action==="Allocated" ? params.issuedTo : "Unassigned",
+        condition: condition,
+        department: params.department
+      });
+    }
+    throw new Error("Failed");
+  }).then(function() {
     toast(action + " recorded","success");
     closeModal("assetActionModal");
     loadAssets();
-  } else toast("Error","error");
+  }).catch(function() { toast("Error recording action","error"); });
 }
 
-async function deleteAsset(id, name) {
-  if (!confirm(`Delete asset "${name}"? This cannot be undone.`)) return;
-  const r = await api({action:"deleteAsset", assetId:id, assetName:name, deletedBy:currentUser.fullName});
-  if (r.success) { toast("Asset deleted","success"); loadAssets(); }
-  else toast("Error: " + r.error, "error");
+function deleteAsset(id, name) {
+  if (!confirm('Delete asset "' + name + '"? This cannot be undone.')) return;
+  api({action:"deleteAsset", assetId:id, assetName:name, deletedBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("Asset deleted","success"); loadAssets(); }
+    else toast("Error: " + r.error,"error");
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  DOCUMENTS
-// ═══════════════════════════════════════════════════════════════
-async function loadDocumentPage() {
-  if (!allEmployees.length) await loadEmployees();
+// DOCUMENTS
+function loadDocumentPage() {
+  if (!allEmployees.length) loadEmployees();
 }
 
-async function loadDocuments() {
-  const empId = document.getElementById("docEmpFilter").value;
+function loadDocuments() {
+  var empId = document.getElementById("docEmpFilter").value;
   if (!empId) return;
-  const r = await api({action:"getDocuments", employeeId:empId});
-  const docs = r.documents || [];
-  const canPreview = currentUser.role === "Admin" || currentUser.role === "Manager";
-  const tbody = document.getElementById("docTableBody");
-  tbody.innerHTML = docs.length === 0
-    ? `<tr><td colspan="5" class="empty-state">No documents uploaded for this employee</td></tr>`
-    : docs.map(d => `<tr>
-        <td>${d["Doc Type"]||"—"}</td>
-        <td>${d["File Name"]||"—"}</td>
-        <td>${d["Uploaded By"]||"—"}</td>
-        <td>${fmt(d.Timestamp)}</td>
-        <td>
-          ${canPreview?`<a href="${d["Drive URL"]}" target="_blank" class="btn btn-ghost btn-sm">Preview</a>
-          <button class="btn btn-ghost btn-sm" onclick="printDoc('${d["Drive URL"]}')">Print</button>`:"—"}
-        </td>
-      </tr>`).join("");
+  api({action:"getDocuments", employeeId:empId}).then(function(r) {
+    var docs = r.documents || [];
+    var canPreview = (currentUser.role==="Admin" || currentUser.role==="Manager");
+    var tbody = document.getElementById("docTableBody");
+    if (docs.length === 0) {
+      tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No documents uploaded for this employee</td></tr>';
+      return;
+    }
+    tbody.innerHTML = docs.map(function(d) {
+      var btns = canPreview
+        ? '<a href="' + esc(d["Drive URL"]) + '" target="_blank" class="btn btn-ghost btn-sm">Preview</a> <button class="btn btn-ghost btn-sm" onclick="printDoc(\''+esc(d["Drive URL"])+'\')">Print</button>'
+        : "-";
+      return '<tr><td>' + esc(d["Doc Type"]||"-") + '</td><td>' + esc(d["File Name"]||"-") + '</td><td>' + esc(d["Uploaded By"]||"-") + '</td><td>' + fmt(d.Timestamp) + '</td><td>' + btns + '</td></tr>';
+    }).join("");
+  });
 }
 
 function printDoc(url) {
-  const w = window.open(url,"_blank");
-  if (w) setTimeout(()=>{try{w.print();}catch(e){}}, 2000);
+  var w = window.open(url,"_blank");
+  if (w) setTimeout(function(){try{w.print();}catch(e){}}, 2000);
 }
 
 function openUploadDocModal() {
-  if (!allEmployees.length) { toast("Load employees first","error"); return; }
   selectedDocFile = null;
   document.getElementById("docFilePreview").textContent = "";
   openModal("uploadDocModal");
 }
 
 function handleDocFileSelect(e) {
-  const file = e.target.files[0];
+  var file = e.target.files[0];
   if (file) {
     selectedDocFile = file;
-    document.getElementById("docFilePreview").textContent = "📎 " + file.name + " (" + (file.size/1024).toFixed(1) + " KB)";
+    document.getElementById("docFilePreview").textContent = "Selected: " + file.name + " (" + (file.size/1024).toFixed(1) + " KB)";
   }
 }
 
-async function uploadDocument() {
-  const empId   = document.getElementById("docEmpSelect").value;
-  const empName = allEmployees.find(e=>e["Employee ID"]===empId)?.["Full Name"] || empId;
-  const docType = document.getElementById("docType").value;
-  if (!empId || !selectedDocFile) { toast("Select employee and file","error"); return; }
-  toast("Uploading…","info");
-  const reader = new FileReader();
-  reader.onload = async function(ev) {
-    const base64 = ev.target.result.split(",")[1];
-    const r = await api({
+function uploadDocument() {
+  var empId   = document.getElementById("docEmpSelect").value;
+  var empName = "";
+  allEmployees.forEach(function(e){ if(e["Employee ID"]===empId) empName=e["Full Name"]; });
+  var docType = document.getElementById("docType").value;
+  if (!empId || !selectedDocFile) { toast("Select an employee and a file","error"); return; }
+  toast("Uploading document...","info");
+  var reader = new FileReader();
+  reader.onload = function(ev) {
+    var base64 = ev.target.result.split(",")[1];
+    api({
       action:"uploadDocument",
-      employeeId:empId, employeeName:empName, docType,
-      filename: selectedDocFile.name,
-      mimeType: selectedDocFile.type,
-      data: base64,
-      uploadedBy: currentUser.fullName
+      employeeId:empId, employeeName:empName, docType:docType,
+      filename:selectedDocFile.name,
+      mimeType:selectedDocFile.type,
+      data:base64,
+      uploadedBy:currentUser.fullName
+    }).then(function(r) {
+      if (r.success) { toast("Document uploaded successfully","success"); closeModal("uploadDocModal"); loadDocuments(); }
+      else toast("Upload failed: " + r.error,"error");
     });
-    if (r.success) { toast("Document uploaded","success"); closeModal("uploadDocModal"); loadDocuments(); }
-    else toast("Upload failed: " + r.error, "error");
   };
   reader.readAsDataURL(selectedDocFile);
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  USERS
-// ═══════════════════════════════════════════════════════════════
-async function loadUsers() {
-  const r = await api({action:"getUsers"});
-  allUsers = r.users || [];
-  renderUserTable();
+// USERS
+function loadUsers() {
+  api({action:"getUsers"}).then(function(r) {
+    allUsers = r.users || [];
+    renderUserTable();
+  });
 }
 
 function renderUserTable() {
-  const isManager = currentUser.role === "Manager";
-  const isAdmin   = currentUser.role === "Admin" || isManager;
-  const tbody = document.getElementById("userTableBody");
-  tbody.innerHTML = allUsers.length === 0
-    ? `<tr><td colspan="5" class="empty-state">No users</td></tr>`
-    : allUsers.map(u => `<tr>
-        <td>${u.username}</td>
-        <td>${u.fullName}</td>
-        <td><span class="badge badge-purple">${u.role}</span></td>
-        <td>${badgeForStatus(String(u.active).toUpperCase())}</td>
-        <td>
-          ${isAdmin?`<button class="btn btn-ghost btn-sm" onclick="openEditUserModal('${u.username}')">Edit</button>
-          <button class="btn btn-ghost btn-sm" onclick="toggleUser('${u.username}')">${String(u.active).toUpperCase()==="YES"?"Deactivate":"Activate"}</button>`:""}
-          ${isManager?`<button class="btn btn-danger btn-sm" onclick="deleteUser('${u.username}')">Delete</button>`:""}
-        </td>
-      </tr>`).join("");
+  var isManager = currentUser.role === "Manager";
+  var isAdmin   = currentUser.role === "Admin" || isManager;
+  var tbody = document.getElementById("userTableBody");
+  if (allUsers.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No users found</td></tr>';
+    return;
+  }
+  tbody.innerHTML = allUsers.map(function(u) {
+    var status = String(u.active||"").toUpperCase();
+    var toggleLabel = status==="YES" ? "Deactivate" : "Activate";
+    var editBtn   = isAdmin   ? '<button class="btn btn-ghost btn-sm" onclick="openEditUserModal(\''+esc(u.username)+'\')">Edit</button> <button class="btn btn-ghost btn-sm" onclick="toggleUser(\''+esc(u.username)+'\')">'+toggleLabel+'</button>' : "";
+    var deleteBtn = isManager ? ' <button class="btn btn-danger btn-sm" onclick="deleteUser(\''+esc(u.username)+'\')">Delete</button>' : "";
+    return '<tr><td>' + esc(u.username) + '</td><td>' + esc(u.fullName) + '</td><td><span class="badge badge-purple">' + esc(u.role) + '</span></td><td>' + badgeForStatus(status) + '</td><td>' + editBtn + deleteBtn + '</td></tr>';
+  }).join("");
 }
 
 function openAddUserModal() {
-  document.getElementById("userModalTitle").textContent = "Add User";
-  ["u_user","u_pass","u_name","u_empid","u_email"].forEach(id=>document.getElementById(id).value="");
+  ["u_user","u_pass","u_name","u_empid","u_email"].forEach(function(id){ document.getElementById(id).value=""; });
   document.getElementById("u_role").value = "Employee";
   openModal("addUserModal");
 }
 
-async function saveUser() {
-  const r = await api({
+function saveUser() {
+  api({
     action:"addUser", addedBy:currentUser.fullName,
-    username: document.getElementById("u_user").value.trim(),
-    password: document.getElementById("u_pass").value.trim(),
-    fullName: document.getElementById("u_name").value.trim(),
-    role:     document.getElementById("u_role").value,
-    employeeId:document.getElementById("u_empid").value.trim(),
-    email:    document.getElementById("u_email").value.trim()
+    username:   document.getElementById("u_user").value.trim(),
+    password:   document.getElementById("u_pass").value.trim(),
+    fullName:   document.getElementById("u_name").value.trim(),
+    role:       document.getElementById("u_role").value,
+    employeeId: document.getElementById("u_empid").value.trim(),
+    email:      document.getElementById("u_email").value.trim()
+  }).then(function(r) {
+    if (r.success) { toast("User added","success"); closeModal("addUserModal"); loadUsers(); }
+    else toast("Error: " + r.error,"error");
   });
-  if (r.success) { toast("User added","success"); closeModal("addUserModal"); loadUsers(); }
-  else toast("Error: " + r.error, "error");
 }
 
 function openEditUserModal(username) {
@@ -2157,160 +2200,143 @@ function openEditUserModal(username) {
   openModal("editUserModal");
 }
 
-async function saveEditUser() {
-  const r = await api({
+function saveEditUser() {
+  api({
     action:"editUser", doneBy:currentUser.fullName,
     username:    document.getElementById("eu_username").value,
     newRole:     document.getElementById("eu_role").value,
     newPassword: document.getElementById("eu_pass").value
+  }).then(function(r) {
+    if (r.success) { toast("User updated","success"); closeModal("editUserModal"); loadUsers(); }
+    else toast("Error: " + r.error,"error");
   });
-  if (r.success) { toast("User updated: " + r.changed,"success"); closeModal("editUserModal"); loadUsers(); }
-  else toast("Error: " + r.error, "error");
 }
 
-async function toggleUser(username) {
-  const r = await api({action:"toggleUser", username, doneBy:currentUser.fullName});
-  if (r.success) { toast("User " + (r.newStatus==="YES"?"activated":"deactivated"),"success"); loadUsers(); }
+function toggleUser(username) {
+  api({action:"toggleUser", username:username, doneBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("User " + (r.newStatus==="YES"?"activated":"deactivated"),"success"); loadUsers(); }
+  });
 }
 
-async function deleteUser(username) {
-  if (!confirm(`Delete user "${username}"? Cannot be undone.`)) return;
-  const r = await api({action:"deleteUser", username, doneBy:currentUser.fullName});
-  if (r.success) { toast("User deleted","success"); loadUsers(); }
-  else toast("Error: " + r.error, "error");
+function deleteUser(username) {
+  if (!confirm('Delete user "' + username + '"? This cannot be undone.')) return;
+  api({action:"deleteUser", username:username, doneBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("User deleted","success"); loadUsers(); }
+    else toast("Error: " + r.error,"error");
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  FINANCE
-// ═══════════════════════════════════════════════════════════════
-async function loadFinance() {
+// FINANCE
+function loadFinance() {
   if (currentUser.role !== "Manager") {
-    document.getElementById("page-finance").innerHTML = `<div class="alert alert-error">Access restricted to Manager role only.</div>`;
+    document.getElementById("page-finance").innerHTML = '<div class="alert alert-error">Access restricted to Manager role only.</div>';
     return;
   }
-  const [salR, empR] = await Promise.all([
+  Promise.all([
     api({action:"getSalaryData"}),
     api({action:"getAllEmployees"})
-  ]);
-  allSalary    = salR.salary    || [];
-  allEmployees = empR.employees || [];
+  ]).then(function(results) {
+    allSalary    = results[0].salary    || [];
+    allEmployees = results[1].employees || [];
 
-  // Stats
-  const activeEmps = allEmployees.filter(e=>e.Status==="Active").length;
-  const activeSalArr = allSalary.filter(s=>s.Status==="Active");
-  const exitedSalArr = allSalary.filter(s=>s.Status==="Exited");
-  const totalActiveMonthly = activeSalArr.reduce((s,e)=>s+(parseFloat(e["Current CTC"])||0),0)/12;
-  const totalExitedHistoric = exitedSalArr.reduce((s,e)=>s+(parseFloat(e["Current CTC"])||0),0);
+    var activeEmps    = allEmployees.filter(function(e){return e.Status==="Active";}).length;
+    var activeSalArr  = allSalary.filter(function(s){return s.Status==="Active";});
+    var exitedSalArr  = allSalary.filter(function(s){return s.Status==="Exited";});
+    var totalMonthly  = activeSalArr.reduce(function(s,e){return s+(parseFloat(e["Current CTC"])||0);},0)/12;
+    var totalExited   = exitedSalArr.reduce(function(s,e){return s+(parseFloat(e["Current CTC"])||0);},0);
+    var avgCTC        = activeSalArr.length ? totalMonthly*12/activeSalArr.length : 0;
 
-  document.getElementById("finStats").innerHTML = [
-    {label:"Active Employees", value:activeEmps, color:"var(--accent2)"},
-    {label:"Monthly Payroll",  value:fmtCurrency(Math.round(totalActiveMonthly)), color:"var(--accent)"},
-    {label:"Avg CTC (Active)", value:fmtCurrency(Math.round(activeSalArr.length?totalActiveMonthly*12/activeSalArr.length:0)), color:"var(--gold)"},
-    {label:"Exited Employees", value:exitedSalArr.length, color:"var(--warn)"}
-  ].map(s=>`<div class="stat-card"><div class="stat-label">${s.label}</div><div class="stat-value" style="color:${s.color}">${s.value}</div></div>`).join("");
+    document.getElementById("finStats").innerHTML = [
+      {label:"Active Employees", value:activeEmps,              color:"var(--accent2)"},
+      {label:"Monthly Payroll",  value:fmtCurrency(Math.round(totalMonthly)), color:"var(--accent)"},
+      {label:"Average CTC",      value:fmtCurrency(Math.round(avgCTC)),       color:"var(--gold)"},
+      {label:"Exited Staff",     value:exitedSalArr.length,     color:"var(--warn)"}
+    ].map(function(s){
+      return '<div class="stat-card"><div class="stat-label">'+s.label+'</div><div class="stat-value" style="color:'+s.color+'">'+s.value+'</div></div>';
+    }).join("");
 
-  // Salary table
-  const tbody = document.getElementById("salaryTableBody");
-  tbody.innerHTML = allSalary.length===0
-    ? `<tr><td colspan="7" class="empty-state">No salary records yet</td></tr>`
-    : allSalary.map(s=>`<tr>
-        <td>${s["Employee Name"]||"—"}</td><td>${s.Department||"—"}</td>
-        <td>${fmtCurrency(s["Starting CTC"])}</td><td>${fmtCurrency(s["Current CTC"])}</td>
-        <td>${fmt(s["Last Increment Date"])}</td><td>${s["Last Increment %"]||"—"}</td>
-        <td>${badgeForStatus(s.Status||"Active")}</td>
-      </tr>`).join("");
+    var tbody = document.getElementById("salaryTableBody");
+    tbody.innerHTML = allSalary.length===0
+      ? '<tr><td colspan="7" class="empty-state">No salary records yet. Add them in Manage Salaries.</td></tr>'
+      : allSalary.map(function(s){
+          return '<tr><td>'+esc(s["Employee Name"]||"-")+'</td><td>'+esc(s.Department||"-")+'</td><td>'+fmtCurrency(s["Starting CTC"])+'</td><td>'+fmtCurrency(s["Current CTC"])+'</td><td>'+fmt(s["Last Increment Date"])+'</td><td>'+esc(s["Last Increment %"]||"-")+'</td><td>'+badgeForStatus(s.Status||"Active")+'</td></tr>';
+        }).join("");
 
-  // Analytics
-  document.getElementById("activeSpend").textContent = fmtCurrency(Math.round(totalActiveMonthly)) + "/mo";
-  document.getElementById("exitedSpend").textContent = fmtCurrency(Math.round(totalExitedHistoric));
+    document.getElementById("activeSpend").textContent  = fmtCurrency(Math.round(totalMonthly)) + "/mo";
+    document.getElementById("exitedSpend").textContent  = fmtCurrency(Math.round(totalExited));
 
-  // Dept breakdown
-  const byDept = {};
-  activeSalArr.forEach(s => {
-    const d = s.Department||"Unknown";
-    byDept[d] = (byDept[d]||0) + (parseFloat(s["Current CTC"])||0);
+    var byDept = {};
+    activeSalArr.forEach(function(s){
+      var d = s.Department||"Unknown";
+      byDept[d] = (byDept[d]||0) + (parseFloat(s["Current CTC"])||0);
+    });
+    var sortedDepts = Object.keys(byDept).map(function(d){return [d,byDept[d]];}).sort(function(a,b){return b[1]-a[1];});
+
+    document.getElementById("highestPaidDepts").innerHTML = sortedDepts.slice(0,5).map(function(pair){
+      return '<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);"><span>'+esc(pair[0])+'</span><span style="font-family:var(--font-h);font-weight:700;">'+fmtCurrency(Math.round(pair[1]/12))+'/mo</span></div>';
+    }).join("") || "<p class='text-muted' style='font-size:13px;'>No active salary data</p>";
+
+    var proj = totalMonthly * 1.03;
+    document.getElementById("projectedSpend").innerHTML =
+      '<div class="grid-3">' +
+      '<div class="stat-card"><div class="stat-label">Current Monthly</div><div class="stat-value" style="font-size:22px;">'+fmtCurrency(Math.round(totalMonthly))+'</div></div>' +
+      '<div class="stat-card"><div class="stat-label">Projected (3% inc)</div><div class="stat-value" style="font-size:22px;color:var(--gold);">'+fmtCurrency(Math.round(proj))+'</div></div>' +
+      '<div class="stat-card"><div class="stat-label">Quarterly Spend</div><div class="stat-value" style="font-size:22px;color:var(--warn);">'+fmtCurrency(Math.round(proj*3))+'</div></div>' +
+      '</div>';
+
+    renderBarChart("monthlyBurnChart", ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map(function(m){return {label:m,value:totalMonthly};}), "var(--accent)");
+    renderBarChart("deptSpendChart", sortedDepts.slice(0,8).map(function(p){return {label:p[0].substring(0,6),value:p[1]};}), "var(--gold)");
+    renderSalaryManageTable();
   });
-  const sortedDepts = Object.entries(byDept).sort((a,b)=>b[1]-a[1]);
-  document.getElementById("highestPaidDepts").innerHTML = sortedDepts.slice(0,5).map(([d,v])=>
-    `<div class="flex justify-between items-center" style="padding:8px 0;border-bottom:1px solid var(--border);">
-      <span>${d}</span><span style="font-family:var(--font-h);font-weight:700;">${fmtCurrency(Math.round(v/12))}/mo</span>
-    </div>`).join("");
-
-  // Projected spend (next quarter = +3%)
-  const projMonthly = totalActiveMonthly * 1.03;
-  document.getElementById("projectedSpend").innerHTML = `
-    <div class="grid-3">
-      <div class="stat-card"><div class="stat-label">Current Monthly</div><div class="stat-value" style="font-size:22px;">${fmtCurrency(Math.round(totalActiveMonthly))}</div></div>
-      <div class="stat-card"><div class="stat-label">Projected Q1 (3% inc)</div><div class="stat-value" style="font-size:22px;color:var(--gold);">${fmtCurrency(Math.round(projMonthly))}</div></div>
-      <div class="stat-card"><div class="stat-label">Quarterly Spend</div><div class="stat-value" style="font-size:22px;color:var(--warn);">${fmtCurrency(Math.round(projMonthly*3))}</div></div>
-    </div>`;
-
-  // Monthly burn chart (simple bar chart using salary data)
-  renderMonthlyBurnChart(activeSalArr);
-  renderDeptChart(sortedDepts);
-
-  // Manage salaries table
-  renderSalaryManageTable();
 }
 
-function renderMonthlyBurnChart(data) {
-  const months = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-  const monthly = Array(12).fill(0);
-  const total = data.reduce((s,e)=>s+(parseFloat(e["Current CTC"])||0),0)/12;
-  monthly.fill(total);
-  const max = Math.max(...monthly) || 1;
-  document.getElementById("monthlyBurnChart").innerHTML = months.map((m,i)=>
-    `<div class="bar-wrap"><div class="bar" style="height:${(monthly[i]/max)*100}%;background:linear-gradient(to top,var(--accent),var(--accent2));opacity:${0.5+i*0.04};"></div><div class="bar-lbl">${m}</div></div>`
-  ).join("");
-}
-
-function renderDeptChart(sortedDepts) {
-  const max = sortedDepts.length ? sortedDepts[0][1] : 1;
-  document.getElementById("deptSpendChart").innerHTML = sortedDepts.slice(0,8).map(([d,v])=>
-    `<div class="bar-wrap"><div class="bar" style="height:${(v/max)*100}%;background:linear-gradient(to top,var(--gold),var(--warn));"></div><div class="bar-lbl" style="max-width:40px;overflow:hidden;text-overflow:ellipsis;">${d.substring(0,6)}</div></div>`
-  ).join("");
+function renderBarChart(containerId, data, color) {
+  var container = document.getElementById(containerId);
+  if (!container || !data.length) return;
+  var max = Math.max.apply(null, data.map(function(d){return d.value;})) || 1;
+  container.innerHTML = data.map(function(d) {
+    var pct = Math.round((d.value/max)*100);
+    return '<div class="bar-wrap"><div class="bar" style="height:'+pct+'%;background:'+color+';"></div><div class="bar-lbl">'+esc(d.label)+'</div></div>';
+  }).join("");
 }
 
 function renderSalaryManageTable() {
-  const tbody = document.getElementById("salaryManageBody");
+  var tbody = document.getElementById("salaryManageBody");
   tbody.innerHTML = allSalary.length===0
-    ? `<tr><td colspan="7" class="empty-state">No salary records</td></tr>`
-    : allSalary.map(s=>`<tr>
-        <td>${s["Employee Name"]||"—"}</td><td>${s.Department||"—"}</td>
-        <td>${fmtCurrency(s["Starting CTC"])}</td><td>${fmtCurrency(s["Current CTC"])}</td>
-        <td>${fmt(s["Last Increment Date"])}</td><td>${s["Last Increment %"]||"—"}</td>
-        <td>
-          <button class="btn btn-ghost btn-sm" onclick="editSalaryRecord('${s["Employee ID"]}')">Edit</button>
-        </td>
-      </tr>`).join("");
+    ? '<tr><td colspan="7" class="empty-state">No salary records. Click + Add to start.</td></tr>'
+    : allSalary.map(function(s){
+        return '<tr><td>'+esc(s["Employee Name"]||"-")+'</td><td>'+esc(s.Department||"-")+'</td><td>'+fmtCurrency(s["Starting CTC"])+'</td><td>'+fmtCurrency(s["Current CTC"])+'</td><td>'+fmt(s["Last Increment Date"])+'</td><td>'+esc(s["Last Increment %"]||"-")+'</td><td><button class="btn btn-ghost btn-sm" onclick="editSalaryRecord(\''+esc(s["Employee ID"])+'\')">Edit</button></td></tr>';
+      }).join("");
 }
 
 function openSalaryModal() {
   document.getElementById("sal_empid").value = "";
-  ["sal_name","sal_dept","sal_doj","sal_start","sal_current","sal_incDate","sal_incPct","sal_exit","sal_notes"].forEach(id=>document.getElementById(id).value="");
+  ["sal_name","sal_dept","sal_doj","sal_start","sal_current","sal_incDate","sal_incPct","sal_exit","sal_notes"].forEach(function(id){document.getElementById(id).value="";});
   document.getElementById("sal_status").value = "Active";
   openModal("salaryModal");
 }
 
-async function editSalaryRecord(empId) {
-  const existing = allSalary.find(s=>s["Employee ID"]===empId);
+function editSalaryRecord(empId) {
+  var existing = null;
+  allSalary.forEach(function(s){ if(s["Employee ID"]===empId) existing=s; });
   if (!existing) return;
-  document.getElementById("sal_empid").value    = empId;
-  document.getElementById("sal_name").value     = existing["Employee Name"]||"";
-  document.getElementById("sal_dept").value     = existing.Department||"";
-  document.getElementById("sal_doj").value      = existing["Joining Date"]||"";
-  document.getElementById("sal_start").value    = existing["Starting CTC"]||"";
-  document.getElementById("sal_current").value  = existing["Current CTC"]||"";
-  document.getElementById("sal_incDate").value  = existing["Last Increment Date"]||"";
-  document.getElementById("sal_incPct").value   = existing["Last Increment %"]||"";
-  document.getElementById("sal_status").value   = existing.Status||"Active";
-  document.getElementById("sal_exit").value     = existing["Exit Date"]||"";
+  document.getElementById("sal_empid").value   = empId;
+  document.getElementById("sal_name").value    = existing["Employee Name"]||"";
+  document.getElementById("sal_dept").value    = existing.Department||"";
+  document.getElementById("sal_doj").value     = existing["Joining Date"]||"";
+  document.getElementById("sal_start").value   = existing["Starting CTC"]||"";
+  document.getElementById("sal_current").value = existing["Current CTC"]||"";
+  document.getElementById("sal_incDate").value = existing["Last Increment Date"]||"";
+  document.getElementById("sal_incPct").value  = existing["Last Increment %"]||"";
+  document.getElementById("sal_status").value  = existing.Status||"Active";
+  document.getElementById("sal_exit").value    = existing["Exit Date"]||"";
   openModal("salaryModal");
 }
 
 function prefillSalaryFromEmp() {
-  const empId = document.getElementById("sal_empid").value;
-  const emp = allEmployees.find(e=>e["Employee ID"]===empId);
+  var empId = document.getElementById("sal_empid").value;
+  var emp = null;
+  allEmployees.forEach(function(e){ if(e["Employee ID"]===empId) emp=e; });
   if (emp) {
     document.getElementById("sal_name").value = emp["Full Name"]||"";
     document.getElementById("sal_dept").value = emp.Department||"";
@@ -2318,11 +2344,12 @@ function prefillSalaryFromEmp() {
   }
 }
 
-async function saveSalary() {
-  const empId    = document.getElementById("sal_empid").value;
-  const oldCTC   = allSalary.find(s=>s["Employee ID"]===empId)?.["Current CTC"] || 0;
-  const newCTC   = document.getElementById("sal_current").value;
-  const r = await api({
+function saveSalary() {
+  var empId  = document.getElementById("sal_empid").value;
+  var oldCTC = 0;
+  allSalary.forEach(function(s){ if(s["Employee ID"]===empId) oldCTC=s["Current CTC"]||0; });
+  var newCTC = document.getElementById("sal_current").value;
+  api({
     action:"saveSalary", doneBy:currentUser.fullName,
     employeeId:        empId,
     employeeName:      document.getElementById("sal_name").value,
@@ -2334,83 +2361,71 @@ async function saveSalary() {
     lastIncrementPct:  document.getElementById("sal_incPct").value,
     status:            document.getElementById("sal_status").value,
     exitDate:          document.getElementById("sal_exit").value
-  });
-  if (r.success) {
-    // Add ledger entry if CTC changed
+  }).then(function(r) {
+    if (!r.success) throw new Error(r.error||"Save failed");
     if (oldCTC && oldCTC != newCTC) {
-      await api({
+      return api({
         action:"addSalaryLedgerEntry", doneBy:currentUser.fullName,
         employeeId:   empId,
         employeeName: document.getElementById("sal_name").value,
         eventType:"Increment",
-        oldCTC, newCTC,
-        changePct: document.getElementById("sal_incPct").value,
+        oldCTC:oldCTC, newCTC:newCTC,
+        changePct:    document.getElementById("sal_incPct").value,
         effectiveDate:document.getElementById("sal_incDate").value,
-        notes: document.getElementById("sal_notes").value
+        notes:        document.getElementById("sal_notes").value
       });
     }
+  }).then(function() {
     toast("Salary saved","success"); closeModal("salaryModal"); loadFinance();
-  } else toast("Error: " + r.error, "error");
+  }).catch(function(err) { toast("Error: " + err.message,"error"); });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  LOGS
-// ═══════════════════════════════════════════════════════════════
-async function loadLogs() {
-  const r = await api({action:"getLogs", limit:500});
-  allLogs = r.logs || [];
-  renderLogs();
+// LOGS
+function loadLogs() {
+  api({action:"getLogs", limit:500}).then(function(r) {
+    allLogs = r.logs || [];
+    renderLogs();
+  });
 }
 
 function renderLogs() {
-  const q = document.getElementById("logSearch").value.toLowerCase();
-  const filtered = allLogs.filter(l => !q || JSON.stringify(l).toLowerCase().includes(q));
-  const tbody = document.getElementById("logsBody");
-  tbody.innerHTML = filtered.length===0
-    ? `<tr><td colspan="5" class="empty-state">No logs</td></tr>`
-    : filtered.map(l=>`<tr>
-        <td style="font-size:11px;white-space:nowrap;">${fmt(l.Timestamp)}</td>
-        <td><span class="tag">${l.Action||"—"}</span></td>
-        <td>${l["Asset Name"]||l["Asset ID"]||"—"}</td>
-        <td>${l["Done By"]||"—"}</td>
-        <td style="font-size:12px;color:var(--muted);">${l.Details||"—"}</td>
-      </tr>`).join("");
+  var q = document.getElementById("logSearch").value.toLowerCase();
+  var filtered = allLogs.filter(function(l){ return !q || JSON.stringify(l).toLowerCase().indexOf(q)>=0; });
+  var tbody = document.getElementById("logsBody");
+  if (filtered.length === 0) {
+    tbody.innerHTML = '<tr><td colspan="5" class="empty-state">No logs found</td></tr>';
+    return;
+  }
+  tbody.innerHTML = filtered.map(function(l) {
+    return '<tr><td style="font-size:11px;white-space:nowrap;">'+fmt(l.Timestamp)+'</td><td><span class="tag">'+esc(l.Action||"-")+'</span></td><td>'+esc(l["Asset Name"]||l["Asset ID"]||"-")+'</td><td>'+esc(l["Done By"]||"-")+'</td><td style="font-size:12px;color:var(--muted);">'+esc(l.Details||"-")+'</td></tr>';
+  }).join("");
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  CHANGE PASSWORD
-// ═══════════════════════════════════════════════════════════════
+// CHANGE PASSWORD
 function showChangePwModal() { openModal("changePwModal"); }
 
-async function doChangePassword() {
-  const oldPw  = document.getElementById("cpOld").value;
-  const newPw  = document.getElementById("cpNew").value;
-  const confPw = document.getElementById("cpConfirm").value;
-  if (!oldPw || !newPw) { toast("Fill all fields","error"); return; }
-  if (newPw !== confPw) { toast("New passwords don't match","error"); return; }
+function doChangePassword() {
+  var oldPw  = document.getElementById("cpOld").value;
+  var newPw  = document.getElementById("cpNew").value;
+  var confPw = document.getElementById("cpConfirm").value;
+  if (!oldPw || !newPw) { toast("Please fill all fields","error"); return; }
+  if (newPw !== confPw) { toast("New passwords do not match","error"); return; }
   if (newPw.length < 6) { toast("Password must be at least 6 characters","error"); return; }
-  const r = await api({action:"changePassword", username:currentUser.username, oldPassword:oldPw, newPassword:newPw, doneBy:currentUser.fullName});
-  if (r.success) { toast("Password changed","success"); closeModal("changePwModal"); }
-  else toast("Error: " + r.error, "error");
+  api({action:"changePassword", username:currentUser.username, oldPassword:oldPw, newPassword:newPw, doneBy:currentUser.fullName}).then(function(r) {
+    if (r.success) { toast("Password changed successfully","success"); closeModal("changePwModal"); }
+    else toast("Error: " + r.error,"error");
+  });
 }
 
-// ═══════════════════════════════════════════════════════════════
-//  PAGE LOAD HOOKS
-// ═══════════════════════════════════════════════════════════════
-document.querySelector('[data-page="attendance"]').addEventListener("click", () => {
-  setTimeout(() => { checkTodayPunch(); loadMyAttendance(); loadCorrections(); }, 300);
+// SET DEFAULT DATES ON LOAD
+window.addEventListener("load", function() {
+  var now = new Date();
+  var mf = document.getElementById("attMonthFilter");
+  if (mf) mf.value = now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2,"0");
+  var adf = document.getElementById("adminDateFilter");
+  if (adf) adf.value = now.toISOString().split("T")[0];
 });
 
-document.querySelector('[data-page="leaves"]').addEventListener("click", () => {
-  setTimeout(() => { loadAllLeaves(); }, 300);
-});
-
-// Set default month filter
-const now = new Date();
-const monthFilter = document.getElementById("attMonthFilter");
-if (monthFilter) monthFilter.value = now.getFullYear() + "-" + String(now.getMonth()+1).padStart(2,"0");
-const adminDateFilter = document.getElementById("adminDateFilter");
-if (adminDateFilter) adminDateFilter.value = now.toISOString().split("T")[0];
 </script>
 </body>
 </html>
